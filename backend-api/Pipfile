@@ -1,2 +1,14 @@
 [packages]
 boto3 = "*"
+plaid-python = "*"
+python-dotenv = "*"
+awscli = "*"
+pytest = "*"
+moto = "*"
+bcrypt = "*"
+jwt = "*"
+flask = "*"
+authlib = "*"
+
+[dev-packages]
+pytest = "*"

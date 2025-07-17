@@ -1,1 +1,68 @@
-# serverless config placeholder
+service: platoro-api
+
+# frameworkVersion: '3'
+
+provider:
+  name: aws
+  runtime: python3.11
+  region: us-east-1
+  environment:
+    GOALS_TABLE: goals
+  iam:
+    role:
+      statements:
+        - Effect: "Allow"
+          Action:
+            - "dynamodb:PutItem"
+            - "dynamodb:GetItem"
+            - "dynamodb:Query"
+            - "dynamodb:DeleteItem"
+            - "dynamodb:UpdateItem"
+          Resource:
+            - arn:aws:dynamodb:us-east-1:620214273874:table/goals
+
+functions:
+  createGoal:
+    handler: src/handlers/goals/create_goal.handler
+    events:
+      - http:
+          path: goal
+          method: post
+  getGoal:
+    handler: src/handlers/goals/get_goal.handler
+    events:
+      - http:
+          path: goal
+          method: get
+          cors: true
+  updateGoalProgress:
+    handler: src/handlers/goals/update_goal_progress.handler
+    events:
+      - http:
+          path: goal-progress
+          method: post
+          cors: true
+  deleteGoal:
+    handler: src/handlers/goals/delete_goal.handler
+    events:
+      - http:
+          path: goal
+          method: delete
+          cors: true
+  getSummary:
+    handler: src/handlers/goals/get_summary.handler
+    events:
+      - http:
+          path: summary
+          method: get
+          cors: true
+
+
+
+
+plugins:
+  - serverless-python-requirements
+
+custom:
+  pythonRequirements:
+    dockerizePip: true
