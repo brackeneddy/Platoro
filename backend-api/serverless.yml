@@ -8,6 +8,8 @@ provider:
   region: us-east-1
   environment:
     GOALS_TABLE: goals
+    COGNITO_USER_POOL_ID: us-east-1_rg2KJCwn3
+    COGNITO_APP_CLIENT_ID: 1ld5rfsnbldiccjtpk6gmvtv9d
   iam:
     role:
       statements:
@@ -56,6 +58,35 @@ functions:
           path: summary
           method: get
           cors: true
+  createAccount:
+    handler: src/handlers/accounts/create_account.handler
+    events:
+      - http:
+          path: account/signup
+          method: post
+          cors: true
+  loginAccount:
+    handler: src/handlers/accounts/login_account.handler
+    events:
+      - http:
+          path: account/login
+          method: post
+          cors: true
+  requestPasswordReset:
+    handler: src/handlers/accounts/request_password_reset.handler
+    events:
+      - http:
+          path: account/request-reset
+          method: post
+          cors: true
+  confirmPasswordReset:
+    handler: src/handlers/accounts/confirm_password_reset.handler
+    events:
+      - http:
+          path: account/confirm-reset
+          method: post
+          cors: true
+
 
 
 

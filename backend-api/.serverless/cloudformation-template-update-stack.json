@@ -32,6 +32,30 @@
         "LogGroupName": "/aws/lambda/platoro-api-dev-getSummary"
       }
     },
+    "CreateAccountLogGroup": {
+      "Type": "AWS::Logs::LogGroup",
+      "Properties": {
+        "LogGroupName": "/aws/lambda/platoro-api-dev-createAccount"
+      }
+    },
+    "LoginAccountLogGroup": {
+      "Type": "AWS::Logs::LogGroup",
+      "Properties": {
+        "LogGroupName": "/aws/lambda/platoro-api-dev-loginAccount"
+      }
+    },
+    "RequestPasswordResetLogGroup": {
+      "Type": "AWS::Logs::LogGroup",
+      "Properties": {
+        "LogGroupName": "/aws/lambda/platoro-api-dev-requestPasswordReset"
+      }
+    },
+    "ConfirmPasswordResetLogGroup": {
+      "Type": "AWS::Logs::LogGroup",
+      "Properties": {
+        "LogGroupName": "/aws/lambda/platoro-api-dev-confirmPasswordReset"
+      }
+    },
     "IamRoleLambdaExecution": {
       "Type": "AWS::IAM::Role",
       "Properties": {
@@ -126,7 +150,7 @@
       "Properties": {
         "Code": {
           "S3Bucket": "serverless-framework-deployments-us-east-1-d478aafd-e16f",
-          "S3Key": "serverless/platoro-api/dev/1752366575440-2025-07-13T00:29:35.440Z/platoro-api.zip"
+          "S3Key": "serverless/platoro-api/dev/1752755780044-2025-07-17T12:36:20.044Z/platoro-api.zip"
         },
         "Handler": "src/handlers/goals/create_goal.handler",
         "Runtime": "python3.11",
@@ -135,7 +159,9 @@
         "Timeout": 6,
         "Environment": {
           "Variables": {
-            "GOALS_TABLE": "goals"
+            "GOALS_TABLE": "goals",
+            "COGNITO_USER_POOL_ID": "us-east-1_rg2KJCwn3",
+            "COGNITO_APP_CLIENT_ID": "1ld5rfsnbldiccjtpk6gmvtv9d"
           }
         },
         "Role": {
@@ -154,7 +180,7 @@
       "Properties": {
         "Code": {
           "S3Bucket": "serverless-framework-deployments-us-east-1-d478aafd-e16f",
-          "S3Key": "serverless/platoro-api/dev/1752366575440-2025-07-13T00:29:35.440Z/platoro-api.zip"
+          "S3Key": "serverless/platoro-api/dev/1752755780044-2025-07-17T12:36:20.044Z/platoro-api.zip"
         },
         "Handler": "src/handlers/goals/get_goal.handler",
         "Runtime": "python3.11",
@@ -163,7 +189,9 @@
         "Timeout": 6,
         "Environment": {
           "Variables": {
-            "GOALS_TABLE": "goals"
+            "GOALS_TABLE": "goals",
+            "COGNITO_USER_POOL_ID": "us-east-1_rg2KJCwn3",
+            "COGNITO_APP_CLIENT_ID": "1ld5rfsnbldiccjtpk6gmvtv9d"
           }
         },
         "Role": {
@@ -182,7 +210,7 @@
       "Properties": {
         "Code": {
           "S3Bucket": "serverless-framework-deployments-us-east-1-d478aafd-e16f",
-          "S3Key": "serverless/platoro-api/dev/1752366575440-2025-07-13T00:29:35.440Z/platoro-api.zip"
+          "S3Key": "serverless/platoro-api/dev/1752755780044-2025-07-17T12:36:20.044Z/platoro-api.zip"
         },
         "Handler": "src/handlers/goals/update_goal_progress.handler",
         "Runtime": "python3.11",
@@ -191,7 +219,9 @@
         "Timeout": 6,
         "Environment": {
           "Variables": {
-            "GOALS_TABLE": "goals"
+            "GOALS_TABLE": "goals",
+            "COGNITO_USER_POOL_ID": "us-east-1_rg2KJCwn3",
+            "COGNITO_APP_CLIENT_ID": "1ld5rfsnbldiccjtpk6gmvtv9d"
           }
         },
         "Role": {
@@ -210,7 +240,7 @@
       "Properties": {
         "Code": {
           "S3Bucket": "serverless-framework-deployments-us-east-1-d478aafd-e16f",
-          "S3Key": "serverless/platoro-api/dev/1752366575440-2025-07-13T00:29:35.440Z/platoro-api.zip"
+          "S3Key": "serverless/platoro-api/dev/1752755780044-2025-07-17T12:36:20.044Z/platoro-api.zip"
         },
         "Handler": "src/handlers/goals/delete_goal.handler",
         "Runtime": "python3.11",
@@ -219,7 +249,9 @@
         "Timeout": 6,
         "Environment": {
           "Variables": {
-            "GOALS_TABLE": "goals"
+            "GOALS_TABLE": "goals",
+            "COGNITO_USER_POOL_ID": "us-east-1_rg2KJCwn3",
+            "COGNITO_APP_CLIENT_ID": "1ld5rfsnbldiccjtpk6gmvtv9d"
           }
         },
         "Role": {
@@ -238,7 +270,7 @@
       "Properties": {
         "Code": {
           "S3Bucket": "serverless-framework-deployments-us-east-1-d478aafd-e16f",
-          "S3Key": "serverless/platoro-api/dev/1752366575440-2025-07-13T00:29:35.440Z/platoro-api.zip"
+          "S3Key": "serverless/platoro-api/dev/1752755780044-2025-07-17T12:36:20.044Z/platoro-api.zip"
         },
         "Handler": "src/handlers/goals/get_summary.handler",
         "Runtime": "python3.11",
@@ -247,7 +279,9 @@
         "Timeout": 6,
         "Environment": {
           "Variables": {
-            "GOALS_TABLE": "goals"
+            "GOALS_TABLE": "goals",
+            "COGNITO_USER_POOL_ID": "us-east-1_rg2KJCwn3",
+            "COGNITO_APP_CLIENT_ID": "1ld5rfsnbldiccjtpk6gmvtv9d"
           }
         },
         "Role": {
@@ -261,54 +295,214 @@
         "GetSummaryLogGroup"
       ]
     },
-    "CreateGoalLambdaVersionxB31TcNYumlisCqyQaGgVkDCnHJYe3BUS7SdARMa6A": {
+    "CreateAccountLambdaFunction": {
+      "Type": "AWS::Lambda::Function",
+      "Properties": {
+        "Code": {
+          "S3Bucket": "serverless-framework-deployments-us-east-1-d478aafd-e16f",
+          "S3Key": "serverless/platoro-api/dev/1752755780044-2025-07-17T12:36:20.044Z/platoro-api.zip"
+        },
+        "Handler": "src/handlers/accounts/create_account.handler",
+        "Runtime": "python3.11",
+        "FunctionName": "platoro-api-dev-createAccount",
+        "MemorySize": 1024,
+        "Timeout": 6,
+        "Environment": {
+          "Variables": {
+            "GOALS_TABLE": "goals",
+            "COGNITO_USER_POOL_ID": "us-east-1_rg2KJCwn3",
+            "COGNITO_APP_CLIENT_ID": "1ld5rfsnbldiccjtpk6gmvtv9d"
+          }
+        },
+        "Role": {
+          "Fn::GetAtt": [
+            "IamRoleLambdaExecution",
+            "Arn"
+          ]
+        }
+      },
+      "DependsOn": [
+        "CreateAccountLogGroup"
+      ]
+    },
+    "LoginAccountLambdaFunction": {
+      "Type": "AWS::Lambda::Function",
+      "Properties": {
+        "Code": {
+          "S3Bucket": "serverless-framework-deployments-us-east-1-d478aafd-e16f",
+          "S3Key": "serverless/platoro-api/dev/1752755780044-2025-07-17T12:36:20.044Z/platoro-api.zip"
+        },
+        "Handler": "src/handlers/accounts/login_account.handler",
+        "Runtime": "python3.11",
+        "FunctionName": "platoro-api-dev-loginAccount",
+        "MemorySize": 1024,
+        "Timeout": 6,
+        "Environment": {
+          "Variables": {
+            "GOALS_TABLE": "goals",
+            "COGNITO_USER_POOL_ID": "us-east-1_rg2KJCwn3",
+            "COGNITO_APP_CLIENT_ID": "1ld5rfsnbldiccjtpk6gmvtv9d"
+          }
+        },
+        "Role": {
+          "Fn::GetAtt": [
+            "IamRoleLambdaExecution",
+            "Arn"
+          ]
+        }
+      },
+      "DependsOn": [
+        "LoginAccountLogGroup"
+      ]
+    },
+    "RequestPasswordResetLambdaFunction": {
+      "Type": "AWS::Lambda::Function",
+      "Properties": {
+        "Code": {
+          "S3Bucket": "serverless-framework-deployments-us-east-1-d478aafd-e16f",
+          "S3Key": "serverless/platoro-api/dev/1752755780044-2025-07-17T12:36:20.044Z/platoro-api.zip"
+        },
+        "Handler": "src/handlers/accounts/request_password_reset.handler",
+        "Runtime": "python3.11",
+        "FunctionName": "platoro-api-dev-requestPasswordReset",
+        "MemorySize": 1024,
+        "Timeout": 6,
+        "Environment": {
+          "Variables": {
+            "GOALS_TABLE": "goals",
+            "COGNITO_USER_POOL_ID": "us-east-1_rg2KJCwn3",
+            "COGNITO_APP_CLIENT_ID": "1ld5rfsnbldiccjtpk6gmvtv9d"
+          }
+        },
+        "Role": {
+          "Fn::GetAtt": [
+            "IamRoleLambdaExecution",
+            "Arn"
+          ]
+        }
+      },
+      "DependsOn": [
+        "RequestPasswordResetLogGroup"
+      ]
+    },
+    "ConfirmPasswordResetLambdaFunction": {
+      "Type": "AWS::Lambda::Function",
+      "Properties": {
+        "Code": {
+          "S3Bucket": "serverless-framework-deployments-us-east-1-d478aafd-e16f",
+          "S3Key": "serverless/platoro-api/dev/1752755780044-2025-07-17T12:36:20.044Z/platoro-api.zip"
+        },
+        "Handler": "src/handlers/accounts/confirm_password_reset.handler",
+        "Runtime": "python3.11",
+        "FunctionName": "platoro-api-dev-confirmPasswordReset",
+        "MemorySize": 1024,
+        "Timeout": 6,
+        "Environment": {
+          "Variables": {
+            "GOALS_TABLE": "goals",
+            "COGNITO_USER_POOL_ID": "us-east-1_rg2KJCwn3",
+            "COGNITO_APP_CLIENT_ID": "1ld5rfsnbldiccjtpk6gmvtv9d"
+          }
+        },
+        "Role": {
+          "Fn::GetAtt": [
+            "IamRoleLambdaExecution",
+            "Arn"
+          ]
+        }
+      },
+      "DependsOn": [
+        "ConfirmPasswordResetLogGroup"
+      ]
+    },
+    "CreateGoalLambdaVersion5sIc2klLFmS8ulN1Jl9qzyNQAP9nK951qvTAQi9bKI": {
       "Type": "AWS::Lambda::Version",
       "DeletionPolicy": "Retain",
       "Properties": {
         "FunctionName": {
           "Ref": "CreateGoalLambdaFunction"
         },
-        "CodeSha256": "SKE3o95DJWsyI0TVei0V01LN/0wY7yUmGWyWf6QeF0w="
+        "CodeSha256": "tXPNL4AEbLzOF224P6oLOsgOCpeaJE6fcDCmz/ptDgo="
       }
     },
-    "GetGoalLambdaVersionc7MgjuaYp0BgR4X1jvyXM43Gh1Hs3KkydvvWJt0o": {
+    "GetGoalLambdaVersionO4Lfro2IbBevjh1nMqnK6KnGh2zfscXXqjKKqb20": {
       "Type": "AWS::Lambda::Version",
       "DeletionPolicy": "Retain",
       "Properties": {
         "FunctionName": {
           "Ref": "GetGoalLambdaFunction"
         },
-        "CodeSha256": "SKE3o95DJWsyI0TVei0V01LN/0wY7yUmGWyWf6QeF0w="
+        "CodeSha256": "tXPNL4AEbLzOF224P6oLOsgOCpeaJE6fcDCmz/ptDgo="
       }
     },
-    "UpdateGoalProgressLambdaVersionU5p7339Zz0ntQk9EPU5O9cHCosk5r9rx4MV1S14": {
+    "UpdateGoalProgressLambdaVersionw9FeEGsqhWXbHUwmH9jZUZO8pgw8bkQG7YWTkEDdA": {
       "Type": "AWS::Lambda::Version",
       "DeletionPolicy": "Retain",
       "Properties": {
         "FunctionName": {
           "Ref": "UpdateGoalProgressLambdaFunction"
         },
-        "CodeSha256": "SKE3o95DJWsyI0TVei0V01LN/0wY7yUmGWyWf6QeF0w="
+        "CodeSha256": "tXPNL4AEbLzOF224P6oLOsgOCpeaJE6fcDCmz/ptDgo="
       }
     },
-    "DeleteGoalLambdaVersionQRyUW3QPSlDLgrXq2QUnxYQpue9ferVQQBEsxwvvM": {
+    "DeleteGoalLambdaVersionoCyg2WIbRaDdLh4XyjkCm9br3KtYWua4SpnOhFSsss": {
       "Type": "AWS::Lambda::Version",
       "DeletionPolicy": "Retain",
       "Properties": {
         "FunctionName": {
           "Ref": "DeleteGoalLambdaFunction"
         },
-        "CodeSha256": "SKE3o95DJWsyI0TVei0V01LN/0wY7yUmGWyWf6QeF0w="
+        "CodeSha256": "tXPNL4AEbLzOF224P6oLOsgOCpeaJE6fcDCmz/ptDgo="
       }
     },
-    "GetSummaryLambdaVersionWZblWy1lUT5T48HdacuAD9RY4XcBcg6qr1TZkm6mEw": {
+    "GetSummaryLambdaVersionzaKioDn5brWQOdb8KtQeCd78xblSMPjM3rKvsBy5AE": {
       "Type": "AWS::Lambda::Version",
       "DeletionPolicy": "Retain",
       "Properties": {
         "FunctionName": {
           "Ref": "GetSummaryLambdaFunction"
         },
-        "CodeSha256": "SKE3o95DJWsyI0TVei0V01LN/0wY7yUmGWyWf6QeF0w="
+        "CodeSha256": "tXPNL4AEbLzOF224P6oLOsgOCpeaJE6fcDCmz/ptDgo="
+      }
+    },
+    "CreateAccountLambdaVersionkR5JFMXHinHAC8dpYguzXjVSYhy0IsXaHOE9uGq4CKs": {
+      "Type": "AWS::Lambda::Version",
+      "DeletionPolicy": "Retain",
+      "Properties": {
+        "FunctionName": {
+          "Ref": "CreateAccountLambdaFunction"
+        },
+        "CodeSha256": "tXPNL4AEbLzOF224P6oLOsgOCpeaJE6fcDCmz/ptDgo="
+      }
+    },
+    "LoginAccountLambdaVersionBOTRarnZ0XTeyYBRQYRVgGC1qcVNce0PEo0CeTwQ": {
+      "Type": "AWS::Lambda::Version",
+      "DeletionPolicy": "Retain",
+      "Properties": {
+        "FunctionName": {
+          "Ref": "LoginAccountLambdaFunction"
+        },
+        "CodeSha256": "tXPNL4AEbLzOF224P6oLOsgOCpeaJE6fcDCmz/ptDgo="
+      }
+    },
+    "RequestPasswordResetLambdaVersion73j0iWexNwU25XIN6wpvsd3h3oHbCQUrcRJXb8WKQ": {
+      "Type": "AWS::Lambda::Version",
+      "DeletionPolicy": "Retain",
+      "Properties": {
+        "FunctionName": {
+          "Ref": "RequestPasswordResetLambdaFunction"
+        },
+        "CodeSha256": "tXPNL4AEbLzOF224P6oLOsgOCpeaJE6fcDCmz/ptDgo="
+      }
+    },
+    "ConfirmPasswordResetLambdaVersionsrELOb5JLG41dLU5X927dr3KBzTpWETI3gNPhwog": {
+      "Type": "AWS::Lambda::Version",
+      "DeletionPolicy": "Retain",
+      "Properties": {
+        "FunctionName": {
+          "Ref": "ConfirmPasswordResetLambdaFunction"
+        },
+        "CodeSha256": "tXPNL4AEbLzOF224P6oLOsgOCpeaJE6fcDCmz/ptDgo="
       }
     },
     "ApiGatewayRestApi": {
@@ -363,6 +557,69 @@
           ]
         },
         "PathPart": "summary",
+        "RestApiId": {
+          "Ref": "ApiGatewayRestApi"
+        }
+      }
+    },
+    "ApiGatewayResourceAccount": {
+      "Type": "AWS::ApiGateway::Resource",
+      "Properties": {
+        "ParentId": {
+          "Fn::GetAtt": [
+            "ApiGatewayRestApi",
+            "RootResourceId"
+          ]
+        },
+        "PathPart": "account",
+        "RestApiId": {
+          "Ref": "ApiGatewayRestApi"
+        }
+      }
+    },
+    "ApiGatewayResourceAccountSignup": {
+      "Type": "AWS::ApiGateway::Resource",
+      "Properties": {
+        "ParentId": {
+          "Ref": "ApiGatewayResourceAccount"
+        },
+        "PathPart": "signup",
+        "RestApiId": {
+          "Ref": "ApiGatewayRestApi"
+        }
+      }
+    },
+    "ApiGatewayResourceAccountLogin": {
+      "Type": "AWS::ApiGateway::Resource",
+      "Properties": {
+        "ParentId": {
+          "Ref": "ApiGatewayResourceAccount"
+        },
+        "PathPart": "login",
+        "RestApiId": {
+          "Ref": "ApiGatewayRestApi"
+        }
+      }
+    },
+    "ApiGatewayResourceAccountRequestDashreset": {
+      "Type": "AWS::ApiGateway::Resource",
+      "Properties": {
+        "ParentId": {
+          "Ref": "ApiGatewayResourceAccount"
+        },
+        "PathPart": "request-reset",
+        "RestApiId": {
+          "Ref": "ApiGatewayRestApi"
+        }
+      }
+    },
+    "ApiGatewayResourceAccountConfirmDashreset": {
+      "Type": "AWS::ApiGateway::Resource",
+      "Properties": {
+        "ParentId": {
+          "Ref": "ApiGatewayResourceAccount"
+        },
+        "PathPart": "confirm-reset",
         "RestApiId": {
           "Ref": "ApiGatewayRestApi"
         }
@@ -497,6 +754,186 @@
         },
         "ResourceId": {
           "Ref": "ApiGatewayResourceSummary"
+        },
+        "RestApiId": {
+          "Ref": "ApiGatewayRestApi"
+        }
+      }
+    },
+    "ApiGatewayMethodAccountSignupOptions": {
+      "Type": "AWS::ApiGateway::Method",
+      "Properties": {
+        "AuthorizationType": "NONE",
+        "HttpMethod": "OPTIONS",
+        "MethodResponses": [
+          {
+            "StatusCode": "200",
+            "ResponseParameters": {
+              "method.response.header.Access-Control-Allow-Origin": true,
+              "method.response.header.Access-Control-Allow-Headers": true,
+              "method.response.header.Access-Control-Allow-Methods": true
+            },
+            "ResponseModels": {}
+          }
+        ],
+        "RequestParameters": {},
+        "Integration": {
+          "Type": "MOCK",
+          "RequestTemplates": {
+            "application/json": "{statusCode:200}"
+          },
+          "ContentHandling": "CONVERT_TO_TEXT",
+          "IntegrationResponses": [
+            {
+              "StatusCode": "200",
+              "ResponseParameters": {
+                "method.response.header.Access-Control-Allow-Origin": "'*'",
+                "method.response.header.Access-Control-Allow-Headers": "'Content-Type,X-Amz-Date,Authorization,X-Api-Key,X-Amz-Security-Token,X-Amz-User-Agent,X-Amzn-Trace-Id'",
+                "method.response.header.Access-Control-Allow-Methods": "'OPTIONS,POST'"
+              },
+              "ResponseTemplates": {
+                "application/json": ""
+              }
+            }
+          ]
+        },
+        "ResourceId": {
+          "Ref": "ApiGatewayResourceAccountSignup"
+        },
+        "RestApiId": {
+          "Ref": "ApiGatewayRestApi"
+        }
+      }
+    },
+    "ApiGatewayMethodAccountLoginOptions": {
+      "Type": "AWS::ApiGateway::Method",
+      "Properties": {
+        "AuthorizationType": "NONE",
+        "HttpMethod": "OPTIONS",
+        "MethodResponses": [
+          {
+            "StatusCode": "200",
+            "ResponseParameters": {
+              "method.response.header.Access-Control-Allow-Origin": true,
+              "method.response.header.Access-Control-Allow-Headers": true,
+              "method.response.header.Access-Control-Allow-Methods": true
+            },
+            "ResponseModels": {}
+          }
+        ],
+        "RequestParameters": {},
+        "Integration": {
+          "Type": "MOCK",
+          "RequestTemplates": {
+            "application/json": "{statusCode:200}"
+          },
+          "ContentHandling": "CONVERT_TO_TEXT",
+          "IntegrationResponses": [
+            {
+              "StatusCode": "200",
+              "ResponseParameters": {
+                "method.response.header.Access-Control-Allow-Origin": "'*'",
+                "method.response.header.Access-Control-Allow-Headers": "'Content-Type,X-Amz-Date,Authorization,X-Api-Key,X-Amz-Security-Token,X-Amz-User-Agent,X-Amzn-Trace-Id'",
+                "method.response.header.Access-Control-Allow-Methods": "'OPTIONS,POST'"
+              },
+              "ResponseTemplates": {
+                "application/json": ""
+              }
+            }
+          ]
+        },
+        "ResourceId": {
+          "Ref": "ApiGatewayResourceAccountLogin"
+        },
+        "RestApiId": {
+          "Ref": "ApiGatewayRestApi"
+        }
+      }
+    },
+    "ApiGatewayMethodAccountRequestDashresetOptions": {
+      "Type": "AWS::ApiGateway::Method",
+      "Properties": {
+        "AuthorizationType": "NONE",
+        "HttpMethod": "OPTIONS",
+        "MethodResponses": [
+          {
+            "StatusCode": "200",
+            "ResponseParameters": {
+              "method.response.header.Access-Control-Allow-Origin": true,
+              "method.response.header.Access-Control-Allow-Headers": true,
+              "method.response.header.Access-Control-Allow-Methods": true
+            },
+            "ResponseModels": {}
+          }
+        ],
+        "RequestParameters": {},
+        "Integration": {
+          "Type": "MOCK",
+          "RequestTemplates": {
+            "application/json": "{statusCode:200}"
+          },
+          "ContentHandling": "CONVERT_TO_TEXT",
+          "IntegrationResponses": [
+            {
+              "StatusCode": "200",
+              "ResponseParameters": {
+                "method.response.header.Access-Control-Allow-Origin": "'*'",
+                "method.response.header.Access-Control-Allow-Headers": "'Content-Type,X-Amz-Date,Authorization,X-Api-Key,X-Amz-Security-Token,X-Amz-User-Agent,X-Amzn-Trace-Id'",
+                "method.response.header.Access-Control-Allow-Methods": "'OPTIONS,POST'"
+              },
+              "ResponseTemplates": {
+                "application/json": ""
+              }
+            }
+          ]
+        },
+        "ResourceId": {
+          "Ref": "ApiGatewayResourceAccountRequestDashreset"
+        },
+        "RestApiId": {
+          "Ref": "ApiGatewayRestApi"
+        }
+      }
+    },
+    "ApiGatewayMethodAccountConfirmDashresetOptions": {
+      "Type": "AWS::ApiGateway::Method",
+      "Properties": {
+        "AuthorizationType": "NONE",
+        "HttpMethod": "OPTIONS",
+        "MethodResponses": [
+          {
+            "StatusCode": "200",
+            "ResponseParameters": {
+              "method.response.header.Access-Control-Allow-Origin": true,
+              "method.response.header.Access-Control-Allow-Headers": true,
+              "method.response.header.Access-Control-Allow-Methods": true
+            },
+            "ResponseModels": {}
+          }
+        ],
+        "RequestParameters": {},
+        "Integration": {
+          "Type": "MOCK",
+          "RequestTemplates": {
+            "application/json": "{statusCode:200}"
+          },
+          "ContentHandling": "CONVERT_TO_TEXT",
+          "IntegrationResponses": [
+            {
+              "StatusCode": "200",
+              "ResponseParameters": {
+                "method.response.header.Access-Control-Allow-Origin": "'*'",
+                "method.response.header.Access-Control-Allow-Headers": "'Content-Type,X-Amz-Date,Authorization,X-Api-Key,X-Amz-Security-Token,X-Amz-User-Agent,X-Amzn-Trace-Id'",
+                "method.response.header.Access-Control-Allow-Methods": "'OPTIONS,POST'"
+              },
+              "ResponseTemplates": {
+                "application/json": ""
+              }
+            }
+          ]
+        },
+        "ResourceId": {
+          "Ref": "ApiGatewayResourceAccountConfirmDashreset"
         },
         "RestApiId": {
           "Ref": "ApiGatewayRestApi"
@@ -733,7 +1170,191 @@
         "GetSummaryLambdaPermissionApiGateway"
       ]
     },
-    "ApiGatewayDeployment1752366526581": {
+    "ApiGatewayMethodAccountSignupPost": {
+      "Type": "AWS::ApiGateway::Method",
+      "Properties": {
+        "HttpMethod": "POST",
+        "RequestParameters": {},
+        "ResourceId": {
+          "Ref": "ApiGatewayResourceAccountSignup"
+        },
+        "RestApiId": {
+          "Ref": "ApiGatewayRestApi"
+        },
+        "ApiKeyRequired": false,
+        "AuthorizationType": "NONE",
+        "Integration": {
+          "IntegrationHttpMethod": "POST",
+          "Type": "AWS_PROXY",
+          "Uri": {
+            "Fn::Join": [
+              "",
+              [
+                "arn:",
+                {
+                  "Ref": "AWS::Partition"
+                },
+                ":apigateway:",
+                {
+                  "Ref": "AWS::Region"
+                },
+                ":lambda:path/2015-03-31/functions/",
+                {
+                  "Fn::GetAtt": [
+                    "CreateAccountLambdaFunction",
+                    "Arn"
+                  ]
+                },
+                "/invocations"
+              ]
+            ]
+          }
+        },
+        "MethodResponses": []
+      },
+      "DependsOn": [
+        "CreateAccountLambdaPermissionApiGateway"
+      ]
+    },
+    "ApiGatewayMethodAccountLoginPost": {
+      "Type": "AWS::ApiGateway::Method",
+      "Properties": {
+        "HttpMethod": "POST",
+        "RequestParameters": {},
+        "ResourceId": {
+          "Ref": "ApiGatewayResourceAccountLogin"
+        },
+        "RestApiId": {
+          "Ref": "ApiGatewayRestApi"
+        },
+        "ApiKeyRequired": false,
+        "AuthorizationType": "NONE",
+        "Integration": {
+          "IntegrationHttpMethod": "POST",
+          "Type": "AWS_PROXY",
+          "Uri": {
+            "Fn::Join": [
+              "",
+              [
+                "arn:",
+                {
+                  "Ref": "AWS::Partition"
+                },
+                ":apigateway:",
+                {
+                  "Ref": "AWS::Region"
+                },
+                ":lambda:path/2015-03-31/functions/",
+                {
+                  "Fn::GetAtt": [
+                    "LoginAccountLambdaFunction",
+                    "Arn"
+                  ]
+                },
+                "/invocations"
+              ]
+            ]
+          }
+        },
+        "MethodResponses": []
+      },
+      "DependsOn": [
+        "LoginAccountLambdaPermissionApiGateway"
+      ]
+    },
+    "ApiGatewayMethodAccountRequestDashresetPost": {
+      "Type": "AWS::ApiGateway::Method",
+      "Properties": {
+        "HttpMethod": "POST",
+        "RequestParameters": {},
+        "ResourceId": {
+          "Ref": "ApiGatewayResourceAccountRequestDashreset"
+        },
+        "RestApiId": {
+          "Ref": "ApiGatewayRestApi"
+        },
+        "ApiKeyRequired": false,
+        "AuthorizationType": "NONE",
+        "Integration": {
+          "IntegrationHttpMethod": "POST",
+          "Type": "AWS_PROXY",
+          "Uri": {
+            "Fn::Join": [
+              "",
+              [
+                "arn:",
+                {
+                  "Ref": "AWS::Partition"
+                },
+                ":apigateway:",
+                {
+                  "Ref": "AWS::Region"
+                },
+                ":lambda:path/2015-03-31/functions/",
+                {
+                  "Fn::GetAtt": [
+                    "RequestPasswordResetLambdaFunction",
+                    "Arn"
+                  ]
+                },
+                "/invocations"
+              ]
+            ]
+          }
+        },
+        "MethodResponses": []
+      },
+      "DependsOn": [
+        "RequestPasswordResetLambdaPermissionApiGateway"
+      ]
+    },
+    "ApiGatewayMethodAccountConfirmDashresetPost": {
+      "Type": "AWS::ApiGateway::Method",
+      "Properties": {
+        "HttpMethod": "POST",
+        "RequestParameters": {},
+        "ResourceId": {
+          "Ref": "ApiGatewayResourceAccountConfirmDashreset"
+        },
+        "RestApiId": {
+          "Ref": "ApiGatewayRestApi"
+        },
+        "ApiKeyRequired": false,
+        "AuthorizationType": "NONE",
+        "Integration": {
+          "IntegrationHttpMethod": "POST",
+          "Type": "AWS_PROXY",
+          "Uri": {
+            "Fn::Join": [
+              "",
+              [
+                "arn:",
+                {
+                  "Ref": "AWS::Partition"
+                },
+                ":apigateway:",
+                {
+                  "Ref": "AWS::Region"
+                },
+                ":lambda:path/2015-03-31/functions/",
+                {
+                  "Fn::GetAtt": [
+                    "ConfirmPasswordResetLambdaFunction",
+                    "Arn"
+                  ]
+                },
+                "/invocations"
+              ]
+            ]
+          }
+        },
+        "MethodResponses": []
+      },
+      "DependsOn": [
+        "ConfirmPasswordResetLambdaPermissionApiGateway"
+      ]
+    },
+    "ApiGatewayDeployment1752755755997": {
       "Type": "AWS::ApiGateway::Deployment",
       "Properties": {
         "RestApiId": {
@@ -745,11 +1366,19 @@
         "ApiGatewayMethodGoalOptions",
         "ApiGatewayMethodGoalDashprogressOptions",
         "ApiGatewayMethodSummaryOptions",
+        "ApiGatewayMethodAccountSignupOptions",
+        "ApiGatewayMethodAccountLoginOptions",
+        "ApiGatewayMethodAccountRequestDashresetOptions",
+        "ApiGatewayMethodAccountConfirmDashresetOptions",
         "ApiGatewayMethodGoalPost",
         "ApiGatewayMethodGoalGet",
         "ApiGatewayMethodGoalDashprogressPost",
         "ApiGatewayMethodGoalDelete",
-        "ApiGatewayMethodSummaryGet"
+        "ApiGatewayMethodSummaryGet",
+        "ApiGatewayMethodAccountSignupPost",
+        "ApiGatewayMethodAccountLoginPost",
+        "ApiGatewayMethodAccountRequestDashresetPost",
+        "ApiGatewayMethodAccountConfirmDashresetPost"
       ]
     },
     "CreateGoalLambdaPermissionApiGateway": {
@@ -936,6 +1565,154 @@
           ]
         }
       }
+    },
+    "CreateAccountLambdaPermissionApiGateway": {
+      "Type": "AWS::Lambda::Permission",
+      "Properties": {
+        "FunctionName": {
+          "Fn::GetAtt": [
+            "CreateAccountLambdaFunction",
+            "Arn"
+          ]
+        },
+        "Action": "lambda:InvokeFunction",
+        "Principal": "apigateway.amazonaws.com",
+        "SourceArn": {
+          "Fn::Join": [
+            "",
+            [
+              "arn:",
+              {
+                "Ref": "AWS::Partition"
+              },
+              ":execute-api:",
+              {
+                "Ref": "AWS::Region"
+              },
+              ":",
+              {
+                "Ref": "AWS::AccountId"
+              },
+              ":",
+              {
+                "Ref": "ApiGatewayRestApi"
+              },
+              "/*/*"
+            ]
+          ]
+        }
+      }
+    },
+    "LoginAccountLambdaPermissionApiGateway": {
+      "Type": "AWS::Lambda::Permission",
+      "Properties": {
+        "FunctionName": {
+          "Fn::GetAtt": [
+            "LoginAccountLambdaFunction",
+            "Arn"
+          ]
+        },
+        "Action": "lambda:InvokeFunction",
+        "Principal": "apigateway.amazonaws.com",
+        "SourceArn": {
+          "Fn::Join": [
+            "",
+            [
+              "arn:",
+              {
+                "Ref": "AWS::Partition"
+              },
+              ":execute-api:",
+              {
+                "Ref": "AWS::Region"
+              },
+              ":",
+              {
+                "Ref": "AWS::AccountId"
+              },
+              ":",
+              {
+                "Ref": "ApiGatewayRestApi"
+              },
+              "/*/*"
+            ]
+          ]
+        }
+      }
+    },
+    "RequestPasswordResetLambdaPermissionApiGateway": {
+      "Type": "AWS::Lambda::Permission",
+      "Properties": {
+        "FunctionName": {
+          "Fn::GetAtt": [
+            "RequestPasswordResetLambdaFunction",
+            "Arn"
+          ]
+        },
+        "Action": "lambda:InvokeFunction",
+        "Principal": "apigateway.amazonaws.com",
+        "SourceArn": {
+          "Fn::Join": [
+            "",
+            [
+              "arn:",
+              {
+                "Ref": "AWS::Partition"
+              },
+              ":execute-api:",
+              {
+                "Ref": "AWS::Region"
+              },
+              ":",
+              {
+                "Ref": "AWS::AccountId"
+              },
+              ":",
+              {
+                "Ref": "ApiGatewayRestApi"
+              },
+              "/*/*"
+            ]
+          ]
+        }
+      }
+    },
+    "ConfirmPasswordResetLambdaPermissionApiGateway": {
+      "Type": "AWS::Lambda::Permission",
+      "Properties": {
+        "FunctionName": {
+          "Fn::GetAtt": [
+            "ConfirmPasswordResetLambdaFunction",
+            "Arn"
+          ]
+        },
+        "Action": "lambda:InvokeFunction",
+        "Principal": "apigateway.amazonaws.com",
+        "SourceArn": {
+          "Fn::Join": [
+            "",
+            [
+              "arn:",
+              {
+                "Ref": "AWS::Partition"
+              },
+              ":execute-api:",
+              {
+                "Ref": "AWS::Region"
+              },
+              ":",
+              {
+                "Ref": "AWS::AccountId"
+              },
+              ":",
+              {
+                "Ref": "ApiGatewayRestApi"
+              },
+              "/*/*"
+            ]
+          ]
+        }
+      }
     }
   },
   "Outputs": {
@@ -948,7 +1725,7 @@
     "CreateGoalLambdaFunctionQualifiedArn": {
       "Description": "Current Lambda function version",
       "Value": {
-        "Ref": "CreateGoalLambdaVersionxB31TcNYumlisCqyQaGgVkDCnHJYe3BUS7SdARMa6A"
+        "Ref": "CreateGoalLambdaVersion5sIc2klLFmS8ulN1Jl9qzyNQAP9nK951qvTAQi9bKI"
       },
       "Export": {
         "Name": "sls-platoro-api-dev-CreateGoalLambdaFunctionQualifiedArn"
@@ -957,7 +1734,7 @@
     "GetGoalLambdaFunctionQualifiedArn": {
       "Description": "Current Lambda function version",
       "Value": {
-        "Ref": "GetGoalLambdaVersionc7MgjuaYp0BgR4X1jvyXM43Gh1Hs3KkydvvWJt0o"
+        "Ref": "GetGoalLambdaVersionO4Lfro2IbBevjh1nMqnK6KnGh2zfscXXqjKKqb20"
       },
       "Export": {
         "Name": "sls-platoro-api-dev-GetGoalLambdaFunctionQualifiedArn"
@@ -966,7 +1743,7 @@
     "UpdateGoalProgressLambdaFunctionQualifiedArn": {
       "Description": "Current Lambda function version",
       "Value": {
-        "Ref": "UpdateGoalProgressLambdaVersionU5p7339Zz0ntQk9EPU5O9cHCosk5r9rx4MV1S14"
+        "Ref": "UpdateGoalProgressLambdaVersionw9FeEGsqhWXbHUwmH9jZUZO8pgw8bkQG7YWTkEDdA"
       },
       "Export": {
         "Name": "sls-platoro-api-dev-UpdateGoalProgressLambdaFunctionQualifiedArn"
@@ -975,7 +1752,7 @@
     "DeleteGoalLambdaFunctionQualifiedArn": {
       "Description": "Current Lambda function version",
       "Value": {
-        "Ref": "DeleteGoalLambdaVersionQRyUW3QPSlDLgrXq2QUnxYQpue9ferVQQBEsxwvvM"
+        "Ref": "DeleteGoalLambdaVersionoCyg2WIbRaDdLh4XyjkCm9br3KtYWua4SpnOhFSsss"
       },
       "Export": {
         "Name": "sls-platoro-api-dev-DeleteGoalLambdaFunctionQualifiedArn"
@@ -984,10 +1761,46 @@
     "GetSummaryLambdaFunctionQualifiedArn": {
       "Description": "Current Lambda function version",
       "Value": {
-        "Ref": "GetSummaryLambdaVersionWZblWy1lUT5T48HdacuAD9RY4XcBcg6qr1TZkm6mEw"
+        "Ref": "GetSummaryLambdaVersionzaKioDn5brWQOdb8KtQeCd78xblSMPjM3rKvsBy5AE"
       },
       "Export": {
         "Name": "sls-platoro-api-dev-GetSummaryLambdaFunctionQualifiedArn"
+      }
+    },
+    "CreateAccountLambdaFunctionQualifiedArn": {
+      "Description": "Current Lambda function version",
+      "Value": {
+        "Ref": "CreateAccountLambdaVersionkR5JFMXHinHAC8dpYguzXjVSYhy0IsXaHOE9uGq4CKs"
+      },
+      "Export": {
+        "Name": "sls-platoro-api-dev-CreateAccountLambdaFunctionQualifiedArn"
+      }
+    },
+    "LoginAccountLambdaFunctionQualifiedArn": {
+      "Description": "Current Lambda function version",
+      "Value": {
+        "Ref": "LoginAccountLambdaVersionBOTRarnZ0XTeyYBRQYRVgGC1qcVNce0PEo0CeTwQ"
+      },
+      "Export": {
+        "Name": "sls-platoro-api-dev-LoginAccountLambdaFunctionQualifiedArn"
+      }
+    },
+    "RequestPasswordResetLambdaFunctionQualifiedArn": {
+      "Description": "Current Lambda function version",
+      "Value": {
+        "Ref": "RequestPasswordResetLambdaVersion73j0iWexNwU25XIN6wpvsd3h3oHbCQUrcRJXb8WKQ"
+      },
+      "Export": {
+        "Name": "sls-platoro-api-dev-RequestPasswordResetLambdaFunctionQualifiedArn"
+      }
+    },
+    "ConfirmPasswordResetLambdaFunctionQualifiedArn": {
+      "Description": "Current Lambda function version",
+      "Value": {
+        "Ref": "ConfirmPasswordResetLambdaVersionsrELOb5JLG41dLU5X927dr3KBzTpWETI3gNPhwog"
+      },
+      "Export": {
+        "Name": "sls-platoro-api-dev-ConfirmPasswordResetLambdaFunctionQualifiedArn"
       }
     },
     "ServiceEndpoint": {
