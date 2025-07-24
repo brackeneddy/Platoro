@@ -12,7 +12,8 @@
         "environment": {
           "GOALS_TABLE": "goals",
           "COGNITO_USER_POOL_ID": "us-east-1_rg2KJCwn3",
-          "COGNITO_APP_CLIENT_ID": "1ld5rfsnbldiccjtpk6gmvtv9d"
+          "COGNITO_APP_CLIENT_ID": "1ld5rfsnbldiccjtpk6gmvtv9d",
+          "COGNITO_APP_CLIENT_SECRET": "<REDACTED>"
         },
         "iam": {
           "role": {
@@ -81,6 +82,12 @@
             },
             "RequestPasswordResetLogGroup": "<REDACTED>",
             "ConfirmPasswordResetLogGroup": "<REDACTED>",
+            "ConfirmSignupLogGroup": {
+              "Type": "AWS::Logs::LogGroup",
+              "Properties": {
+                "LogGroupName": "/aws/lambda/platoro-api-dev-confirmSignup"
+              }
+            },
             "IamRoleLambdaExecution": {
               "Type": "AWS::IAM::Role",
               "Properties": {
@@ -175,7 +182,7 @@
               "Properties": {
                 "Code": {
                   "S3Bucket": "serverless-framework-deployments-us-east-1-d478aafd-e16f",
-                  "S3Key": "serverless/platoro-api/dev/1752755780044-2025-07-17T12:36:20.044Z/platoro-api.zip"
+                  "S3Key": "serverless/platoro-api/dev/1753315521039-2025-07-24T00:05:21.039Z/platoro-api.zip"
                 },
                 "Handler": "src/handlers/goals/create_goal.handler",
                 "Runtime": "python3.11",
@@ -186,7 +193,8 @@
                   "Variables": {
                     "GOALS_TABLE": "goals",
                     "COGNITO_USER_POOL_ID": "us-east-1_rg2KJCwn3",
-                    "COGNITO_APP_CLIENT_ID": "1ld5rfsnbldiccjtpk6gmvtv9d"
+                    "COGNITO_APP_CLIENT_ID": "1ld5rfsnbldiccjtpk6gmvtv9d",
+                    "COGNITO_APP_CLIENT_SECRET": "<REDACTED>"
                   }
                 },
                 "Role": {
@@ -205,7 +213,7 @@
               "Properties": {
                 "Code": {
                   "S3Bucket": "serverless-framework-deployments-us-east-1-d478aafd-e16f",
-                  "S3Key": "serverless/platoro-api/dev/1752755780044-2025-07-17T12:36:20.044Z/platoro-api.zip"
+                  "S3Key": "serverless/platoro-api/dev/1753315521039-2025-07-24T00:05:21.039Z/platoro-api.zip"
                 },
                 "Handler": "src/handlers/goals/get_goal.handler",
                 "Runtime": "python3.11",
@@ -216,7 +224,8 @@
                   "Variables": {
                     "GOALS_TABLE": "goals",
                     "COGNITO_USER_POOL_ID": "us-east-1_rg2KJCwn3",
-                    "COGNITO_APP_CLIENT_ID": "1ld5rfsnbldiccjtpk6gmvtv9d"
+                    "COGNITO_APP_CLIENT_ID": "1ld5rfsnbldiccjtpk6gmvtv9d",
+                    "COGNITO_APP_CLIENT_SECRET": "<REDACTED>"
                   }
                 },
                 "Role": {
@@ -235,7 +244,7 @@
               "Properties": {
                 "Code": {
                   "S3Bucket": "serverless-framework-deployments-us-east-1-d478aafd-e16f",
-                  "S3Key": "serverless/platoro-api/dev/1752755780044-2025-07-17T12:36:20.044Z/platoro-api.zip"
+                  "S3Key": "serverless/platoro-api/dev/1753315521039-2025-07-24T00:05:21.039Z/platoro-api.zip"
                 },
                 "Handler": "src/handlers/goals/update_goal_progress.handler",
                 "Runtime": "python3.11",
@@ -246,7 +255,8 @@
                   "Variables": {
                     "GOALS_TABLE": "goals",
                     "COGNITO_USER_POOL_ID": "us-east-1_rg2KJCwn3",
-                    "COGNITO_APP_CLIENT_ID": "1ld5rfsnbldiccjtpk6gmvtv9d"
+                    "COGNITO_APP_CLIENT_ID": "1ld5rfsnbldiccjtpk6gmvtv9d",
+                    "COGNITO_APP_CLIENT_SECRET": "<REDACTED>"
                   }
                 },
                 "Role": {
@@ -265,7 +275,7 @@
               "Properties": {
                 "Code": {
                   "S3Bucket": "serverless-framework-deployments-us-east-1-d478aafd-e16f",
-                  "S3Key": "serverless/platoro-api/dev/1752755780044-2025-07-17T12:36:20.044Z/platoro-api.zip"
+                  "S3Key": "serverless/platoro-api/dev/1753315521039-2025-07-24T00:05:21.039Z/platoro-api.zip"
                 },
                 "Handler": "src/handlers/goals/delete_goal.handler",
                 "Runtime": "python3.11",
@@ -276,7 +286,8 @@
                   "Variables": {
                     "GOALS_TABLE": "goals",
                     "COGNITO_USER_POOL_ID": "us-east-1_rg2KJCwn3",
-                    "COGNITO_APP_CLIENT_ID": "1ld5rfsnbldiccjtpk6gmvtv9d"
+                    "COGNITO_APP_CLIENT_ID": "1ld5rfsnbldiccjtpk6gmvtv9d",
+                    "COGNITO_APP_CLIENT_SECRET": "<REDACTED>"
                   }
                 },
                 "Role": {
@@ -295,7 +306,7 @@
               "Properties": {
                 "Code": {
                   "S3Bucket": "serverless-framework-deployments-us-east-1-d478aafd-e16f",
-                  "S3Key": "serverless/platoro-api/dev/1752755780044-2025-07-17T12:36:20.044Z/platoro-api.zip"
+                  "S3Key": "serverless/platoro-api/dev/1753315521039-2025-07-24T00:05:21.039Z/platoro-api.zip"
                 },
                 "Handler": "src/handlers/goals/get_summary.handler",
                 "Runtime": "python3.11",
@@ -306,7 +317,8 @@
                   "Variables": {
                     "GOALS_TABLE": "goals",
                     "COGNITO_USER_POOL_ID": "us-east-1_rg2KJCwn3",
-                    "COGNITO_APP_CLIENT_ID": "1ld5rfsnbldiccjtpk6gmvtv9d"
+                    "COGNITO_APP_CLIENT_ID": "1ld5rfsnbldiccjtpk6gmvtv9d",
+                    "COGNITO_APP_CLIENT_SECRET": "<REDACTED>"
                   }
                 },
                 "Role": {
@@ -325,7 +337,7 @@
               "Properties": {
                 "Code": {
                   "S3Bucket": "serverless-framework-deployments-us-east-1-d478aafd-e16f",
-                  "S3Key": "serverless/platoro-api/dev/1752755780044-2025-07-17T12:36:20.044Z/platoro-api.zip"
+                  "S3Key": "serverless/platoro-api/dev/1753315521039-2025-07-24T00:05:21.039Z/platoro-api.zip"
                 },
                 "Handler": "src/handlers/accounts/create_account.handler",
                 "Runtime": "python3.11",
@@ -336,7 +348,8 @@
                   "Variables": {
                     "GOALS_TABLE": "goals",
                     "COGNITO_USER_POOL_ID": "us-east-1_rg2KJCwn3",
-                    "COGNITO_APP_CLIENT_ID": "1ld5rfsnbldiccjtpk6gmvtv9d"
+                    "COGNITO_APP_CLIENT_ID": "1ld5rfsnbldiccjtpk6gmvtv9d",
+                    "COGNITO_APP_CLIENT_SECRET": "<REDACTED>"
                   }
                 },
                 "Role": {
@@ -355,7 +368,7 @@
               "Properties": {
                 "Code": {
                   "S3Bucket": "serverless-framework-deployments-us-east-1-d478aafd-e16f",
-                  "S3Key": "serverless/platoro-api/dev/1752755780044-2025-07-17T12:36:20.044Z/platoro-api.zip"
+                  "S3Key": "serverless/platoro-api/dev/1753315521039-2025-07-24T00:05:21.039Z/platoro-api.zip"
                 },
                 "Handler": "src/handlers/accounts/login_account.handler",
                 "Runtime": "python3.11",
@@ -366,7 +379,8 @@
                   "Variables": {
                     "GOALS_TABLE": "goals",
                     "COGNITO_USER_POOL_ID": "us-east-1_rg2KJCwn3",
-                    "COGNITO_APP_CLIENT_ID": "1ld5rfsnbldiccjtpk6gmvtv9d"
+                    "COGNITO_APP_CLIENT_ID": "1ld5rfsnbldiccjtpk6gmvtv9d",
+                    "COGNITO_APP_CLIENT_SECRET": "<REDACTED>"
                   }
                 },
                 "Role": {
@@ -382,78 +396,119 @@
             },
             "RequestPasswordResetLambdaFunction": "<REDACTED>",
             "ConfirmPasswordResetLambdaFunction": "<REDACTED>",
-            "CreateGoalLambdaVersion5sIc2klLFmS8ulN1Jl9qzyNQAP9nK951qvTAQi9bKI": {
+            "ConfirmSignupLambdaFunction": {
+              "Type": "AWS::Lambda::Function",
+              "Properties": {
+                "Code": {
+                  "S3Bucket": "serverless-framework-deployments-us-east-1-d478aafd-e16f",
+                  "S3Key": "serverless/platoro-api/dev/1753315521039-2025-07-24T00:05:21.039Z/platoro-api.zip"
+                },
+                "Handler": "src/handlers/accounts/confirm_signup.handler",
+                "Runtime": "python3.11",
+                "FunctionName": "platoro-api-dev-confirmSignup",
+                "MemorySize": 1024,
+                "Timeout": 6,
+                "Environment": {
+                  "Variables": {
+                    "GOALS_TABLE": "goals",
+                    "COGNITO_USER_POOL_ID": "us-east-1_rg2KJCwn3",
+                    "COGNITO_APP_CLIENT_ID": "1ld5rfsnbldiccjtpk6gmvtv9d",
+                    "COGNITO_APP_CLIENT_SECRET": "<REDACTED>"
+                  }
+                },
+                "Role": {
+                  "Fn::GetAtt": [
+                    "IamRoleLambdaExecution",
+                    "Arn"
+                  ]
+                }
+              },
+              "DependsOn": [
+                "ConfirmSignupLogGroup"
+              ]
+            },
+            "CreateGoalLambdaVersion2wk3YDpshPe2A0zZx5C9HvSc5ZAfApqAtzDPGtVLM": {
               "Type": "AWS::Lambda::Version",
               "DeletionPolicy": "Retain",
               "Properties": {
                 "FunctionName": {
                   "Ref": "CreateGoalLambdaFunction"
                 },
-                "CodeSha256": "tXPNL4AEbLzOF224P6oLOsgOCpeaJE6fcDCmz/ptDgo="
+                "CodeSha256": "GxLOc06cxD/G6YriaBoT4S/aaj9DtN2brWgOqX0u/J4="
               }
             },
-            "GetGoalLambdaVersionO4Lfro2IbBevjh1nMqnK6KnGh2zfscXXqjKKqb20": {
+            "GetGoalLambdaVersionHLmVdKp7YB2hALNaXLM2GGqTChZzFgrYG5D7SCE": {
               "Type": "AWS::Lambda::Version",
               "DeletionPolicy": "Retain",
               "Properties": {
                 "FunctionName": {
                   "Ref": "GetGoalLambdaFunction"
                 },
-                "CodeSha256": "tXPNL4AEbLzOF224P6oLOsgOCpeaJE6fcDCmz/ptDgo="
+                "CodeSha256": "GxLOc06cxD/G6YriaBoT4S/aaj9DtN2brWgOqX0u/J4="
               }
             },
-            "UpdateGoalProgressLambdaVersionw9FeEGsqhWXbHUwmH9jZUZO8pgw8bkQG7YWTkEDdA": {
+            "UpdateGoalProgressLambdaVersionRIzEDtaWeLqzsmKG5EM2Er9LeaHxKvIKCor0eBehzBw": {
               "Type": "AWS::Lambda::Version",
               "DeletionPolicy": "Retain",
               "Properties": {
                 "FunctionName": {
                   "Ref": "UpdateGoalProgressLambdaFunction"
                 },
-                "CodeSha256": "tXPNL4AEbLzOF224P6oLOsgOCpeaJE6fcDCmz/ptDgo="
+                "CodeSha256": "GxLOc06cxD/G6YriaBoT4S/aaj9DtN2brWgOqX0u/J4="
               }
             },
-            "DeleteGoalLambdaVersionoCyg2WIbRaDdLh4XyjkCm9br3KtYWua4SpnOhFSsss": {
+            "DeleteGoalLambdaVersion3MM5ODCsJIpexRrZXSFHyTxJFha7kohoY492irpc": {
               "Type": "AWS::Lambda::Version",
               "DeletionPolicy": "Retain",
               "Properties": {
                 "FunctionName": {
                   "Ref": "DeleteGoalLambdaFunction"
                 },
-                "CodeSha256": "tXPNL4AEbLzOF224P6oLOsgOCpeaJE6fcDCmz/ptDgo="
+                "CodeSha256": "GxLOc06cxD/G6YriaBoT4S/aaj9DtN2brWgOqX0u/J4="
               }
             },
-            "GetSummaryLambdaVersionzaKioDn5brWQOdb8KtQeCd78xblSMPjM3rKvsBy5AE": {
+            "GetSummaryLambdaVersionTuLlyLu6LPdc8Y6nLRzkRAkGNfhQX5BXQk5zNWKvcQ": {
               "Type": "AWS::Lambda::Version",
               "DeletionPolicy": "Retain",
               "Properties": {
                 "FunctionName": {
                   "Ref": "GetSummaryLambdaFunction"
                 },
-                "CodeSha256": "tXPNL4AEbLzOF224P6oLOsgOCpeaJE6fcDCmz/ptDgo="
+                "CodeSha256": "GxLOc06cxD/G6YriaBoT4S/aaj9DtN2brWgOqX0u/J4="
               }
             },
-            "CreateAccountLambdaVersionkR5JFMXHinHAC8dpYguzXjVSYhy0IsXaHOE9uGq4CKs": {
+            "CreateAccountLambdaVersion5rD8CMsRQX9ocdYubwNy5PzjfVQWWKBsQkCcA0FZs": {
               "Type": "AWS::Lambda::Version",
               "DeletionPolicy": "Retain",
               "Properties": {
                 "FunctionName": {
                   "Ref": "CreateAccountLambdaFunction"
                 },
-                "CodeSha256": "tXPNL4AEbLzOF224P6oLOsgOCpeaJE6fcDCmz/ptDgo="
+                "CodeSha256": "GxLOc06cxD/G6YriaBoT4S/aaj9DtN2brWgOqX0u/J4="
               }
             },
-            "LoginAccountLambdaVersionBOTRarnZ0XTeyYBRQYRVgGC1qcVNce0PEo0CeTwQ": {
+            "LoginAccountLambdaVersionkp4cOWCEFozPu14fJYIHWZkhl0Zax0ZRemnmpZ0v04": {
               "Type": "AWS::Lambda::Version",
               "DeletionPolicy": "Retain",
               "Properties": {
                 "FunctionName": {
                   "Ref": "LoginAccountLambdaFunction"
                 },
-                "CodeSha256": "tXPNL4AEbLzOF224P6oLOsgOCpeaJE6fcDCmz/ptDgo="
+                "CodeSha256": "GxLOc06cxD/G6YriaBoT4S/aaj9DtN2brWgOqX0u/J4="
               }
             },
-            "RequestPasswordResetLambdaVersion73j0iWexNwU25XIN6wpvsd3h3oHbCQUrcRJXb8WKQ": "<REDACTED>",
-            "ConfirmPasswordResetLambdaVersionsrELOb5JLG41dLU5X927dr3KBzTpWETI3gNPhwog": "<REDACTED>",
+            "RequestPasswordResetLambdaVersionYi9t3fuEPk0W0sxfzVhDwMaZ30IocVFzfjnmpjazRE": "<REDACTED>",
+            "ConfirmPasswordResetLambdaVersionU9aH1dveA1Wky4sQmDT656Te4xFQyUokpaz6b8ScRTc": "<REDACTED>",
+            "ConfirmSignupLambdaVersionhhVI6QLZf88ECFlKpV1McG1O4K97OeMbWlvrjeslsQ": {
+              "Type": "AWS::Lambda::Version",
+              "DeletionPolicy": "Retain",
+              "Properties": {
+                "FunctionName": {
+                  "Ref": "ConfirmSignupLambdaFunction"
+                },
+                "CodeSha256": "GxLOc06cxD/G6YriaBoT4S/aaj9DtN2brWgOqX0u/J4="
+              }
+            },
             "ApiGatewayRestApi": {
               "Type": "AWS::ApiGateway::RestApi",
               "Properties": {
@@ -569,6 +624,18 @@
                   "Ref": "ApiGatewayResourceAccount"
                 },
                 "PathPart": "confirm-reset",
+                "RestApiId": {
+                  "Ref": "ApiGatewayRestApi"
+                }
+              }
+            },
+            "ApiGatewayResourceAccountConfirm": {
+              "Type": "AWS::ApiGateway::Resource",
+              "Properties": {
+                "ParentId": {
+                  "Ref": "ApiGatewayResourceAccount"
+                },
+                "PathPart": "confirm",
                 "RestApiId": {
                   "Ref": "ApiGatewayRestApi"
                 }
@@ -883,6 +950,51 @@
                 },
                 "ResourceId": {
                   "Ref": "ApiGatewayResourceAccountConfirmDashreset"
+                },
+                "RestApiId": {
+                  "Ref": "ApiGatewayRestApi"
+                }
+              }
+            },
+            "ApiGatewayMethodAccountConfirmOptions": {
+              "Type": "AWS::ApiGateway::Method",
+              "Properties": {
+                "AuthorizationType": "NONE",
+                "HttpMethod": "OPTIONS",
+                "MethodResponses": [
+                  {
+                    "StatusCode": "200",
+                    "ResponseParameters": {
+                      "method.response.header.Access-Control-Allow-Origin": true,
+                      "method.response.header.Access-Control-Allow-Headers": true,
+                      "method.response.header.Access-Control-Allow-Methods": true
+                    },
+                    "ResponseModels": {}
+                  }
+                ],
+                "RequestParameters": {},
+                "Integration": {
+                  "Type": "MOCK",
+                  "RequestTemplates": {
+                    "application/json": "{statusCode:200}"
+                  },
+                  "ContentHandling": "CONVERT_TO_TEXT",
+                  "IntegrationResponses": [
+                    {
+                      "StatusCode": "200",
+                      "ResponseParameters": {
+                        "method.response.header.Access-Control-Allow-Origin": "'*'",
+                        "method.response.header.Access-Control-Allow-Headers": "'Content-Type,X-Amz-Date,Authorization,X-Api-Key,X-Amz-Security-Token,X-Amz-User-Agent,X-Amzn-Trace-Id'",
+                        "method.response.header.Access-Control-Allow-Methods": "'OPTIONS,POST'"
+                      },
+                      "ResponseTemplates": {
+                        "application/json": ""
+                      }
+                    }
+                  ]
+                },
+                "ResourceId": {
+                  "Ref": "ApiGatewayResourceAccountConfirm"
                 },
                 "RestApiId": {
                   "Ref": "ApiGatewayRestApi"
@@ -1303,7 +1415,53 @@
                 "ConfirmPasswordResetLambdaPermissionApiGateway"
               ]
             },
-            "ApiGatewayDeployment1752755755997": {
+            "ApiGatewayMethodAccountConfirmPost": {
+              "Type": "AWS::ApiGateway::Method",
+              "Properties": {
+                "HttpMethod": "POST",
+                "RequestParameters": {},
+                "ResourceId": {
+                  "Ref": "ApiGatewayResourceAccountConfirm"
+                },
+                "RestApiId": {
+                  "Ref": "ApiGatewayRestApi"
+                },
+                "ApiKeyRequired": "<REDACTED>",
+                "AuthorizationType": "NONE",
+                "Integration": {
+                  "IntegrationHttpMethod": "POST",
+                  "Type": "AWS_PROXY",
+                  "Uri": {
+                    "Fn::Join": [
+                      "",
+                      [
+                        "arn:",
+                        {
+                          "Ref": "AWS::Partition"
+                        },
+                        ":apigateway:",
+                        {
+                          "Ref": "AWS::Region"
+                        },
+                        ":lambda:path/2015-03-31/functions/",
+                        {
+                          "Fn::GetAtt": [
+                            "ConfirmSignupLambdaFunction",
+                            "Arn"
+                          ]
+                        },
+                        "/invocations"
+                      ]
+                    ]
+                  }
+                },
+                "MethodResponses": []
+              },
+              "DependsOn": [
+                "ConfirmSignupLambdaPermissionApiGateway"
+              ]
+            },
+            "ApiGatewayDeployment1753315493244": {
               "Type": "AWS::ApiGateway::Deployment",
               "Properties": {
                 "RestApiId": {
@@ -1319,6 +1477,7 @@
                 "ApiGatewayMethodAccountLoginOptions",
                 "ApiGatewayMethodAccountRequestDashresetOptions",
                 "ApiGatewayMethodAccountConfirmDashresetOptions",
+                "ApiGatewayMethodAccountConfirmOptions",
                 "ApiGatewayMethodGoalPost",
                 "ApiGatewayMethodGoalGet",
                 "ApiGatewayMethodGoalDashprogressPost",
@@ -1327,7 +1486,8 @@
                 "ApiGatewayMethodAccountSignupPost",
                 "ApiGatewayMethodAccountLoginPost",
                 "ApiGatewayMethodAccountRequestDashresetPost",
-                "ApiGatewayMethodAccountConfirmDashresetPost"
+                "ApiGatewayMethodAccountConfirmDashresetPost",
+                "ApiGatewayMethodAccountConfirmPost"
               ]
             },
             "CreateGoalLambdaPermissionApiGateway": {
@@ -1590,7 +1750,44 @@
               }
             },
             "RequestPasswordResetLambdaPermissionApiGateway": "<REDACTED>",
-            "ConfirmPasswordResetLambdaPermissionApiGateway": "<REDACTED>"
+            "ConfirmPasswordResetLambdaPermissionApiGateway": "<REDACTED>",
+            "ConfirmSignupLambdaPermissionApiGateway": {
+              "Type": "AWS::Lambda::Permission",
+              "Properties": {
+                "FunctionName": {
+                  "Fn::GetAtt": [
+                    "ConfirmSignupLambdaFunction",
+                    "Arn"
+                  ]
+                },
+                "Action": "lambda:InvokeFunction",
+                "Principal": "apigateway.amazonaws.com",
+                "SourceArn": {
+                  "Fn::Join": [
+                    "",
+                    [
+                      "arn:",
+                      {
+                        "Ref": "AWS::Partition"
+                      },
+                      ":execute-api:",
+                      {
+                        "Ref": "AWS::Region"
+                      },
+                      ":",
+                      {
+                        "Ref": "AWS::AccountId"
+                      },
+                      ":",
+                      {
+                        "Ref": "ApiGatewayRestApi"
+                      },
+                      "/*/*"
+                    ]
+                  ]
+                }
+              }
+            }
           },
           "Outputs": {
             "ServerlessDeploymentBucketName": {
@@ -1602,7 +1799,7 @@
             "CreateGoalLambdaFunctionQualifiedArn": {
               "Description": "Current Lambda function version",
               "Value": {
-                "Ref": "CreateGoalLambdaVersion5sIc2klLFmS8ulN1Jl9qzyNQAP9nK951qvTAQi9bKI"
+                "Ref": "CreateGoalLambdaVersion2wk3YDpshPe2A0zZx5C9HvSc5ZAfApqAtzDPGtVLM"
               },
               "Export": {
                 "Name": "sls-platoro-api-dev-CreateGoalLambdaFunctionQualifiedArn"
@@ -1611,7 +1808,7 @@
             "GetGoalLambdaFunctionQualifiedArn": {
               "Description": "Current Lambda function version",
               "Value": {
-                "Ref": "GetGoalLambdaVersionO4Lfro2IbBevjh1nMqnK6KnGh2zfscXXqjKKqb20"
+                "Ref": "GetGoalLambdaVersionHLmVdKp7YB2hALNaXLM2GGqTChZzFgrYG5D7SCE"
               },
               "Export": {
                 "Name": "sls-platoro-api-dev-GetGoalLambdaFunctionQualifiedArn"
@@ -1620,7 +1817,7 @@
             "UpdateGoalProgressLambdaFunctionQualifiedArn": {
               "Description": "Current Lambda function version",
               "Value": {
-                "Ref": "UpdateGoalProgressLambdaVersionw9FeEGsqhWXbHUwmH9jZUZO8pgw8bkQG7YWTkEDdA"
+                "Ref": "UpdateGoalProgressLambdaVersionRIzEDtaWeLqzsmKG5EM2Er9LeaHxKvIKCor0eBehzBw"
               },
               "Export": {
                 "Name": "sls-platoro-api-dev-UpdateGoalProgressLambdaFunctionQualifiedArn"
@@ -1629,7 +1826,7 @@
             "DeleteGoalLambdaFunctionQualifiedArn": {
               "Description": "Current Lambda function version",
               "Value": {
-                "Ref": "DeleteGoalLambdaVersionoCyg2WIbRaDdLh4XyjkCm9br3KtYWua4SpnOhFSsss"
+                "Ref": "DeleteGoalLambdaVersion3MM5ODCsJIpexRrZXSFHyTxJFha7kohoY492irpc"
               },
               "Export": {
                 "Name": "sls-platoro-api-dev-DeleteGoalLambdaFunctionQualifiedArn"
@@ -1638,7 +1835,7 @@
             "GetSummaryLambdaFunctionQualifiedArn": {
               "Description": "Current Lambda function version",
               "Value": {
-                "Ref": "GetSummaryLambdaVersionzaKioDn5brWQOdb8KtQeCd78xblSMPjM3rKvsBy5AE"
+                "Ref": "GetSummaryLambdaVersionTuLlyLu6LPdc8Y6nLRzkRAkGNfhQX5BXQk5zNWKvcQ"
               },
               "Export": {
                 "Name": "sls-platoro-api-dev-GetSummaryLambdaFunctionQualifiedArn"
@@ -1647,7 +1844,7 @@
             "CreateAccountLambdaFunctionQualifiedArn": {
               "Description": "Current Lambda function version",
               "Value": {
-                "Ref": "CreateAccountLambdaVersionkR5JFMXHinHAC8dpYguzXjVSYhy0IsXaHOE9uGq4CKs"
+                "Ref": "CreateAccountLambdaVersion5rD8CMsRQX9ocdYubwNy5PzjfVQWWKBsQkCcA0FZs"
               },
               "Export": {
                 "Name": "sls-platoro-api-dev-CreateAccountLambdaFunctionQualifiedArn"
@@ -1656,7 +1853,7 @@
             "LoginAccountLambdaFunctionQualifiedArn": {
               "Description": "Current Lambda function version",
               "Value": {
-                "Ref": "LoginAccountLambdaVersionBOTRarnZ0XTeyYBRQYRVgGC1qcVNce0PEo0CeTwQ"
+                "Ref": "LoginAccountLambdaVersionkp4cOWCEFozPu14fJYIHWZkhl0Zax0ZRemnmpZ0v04"
               },
               "Export": {
                 "Name": "sls-platoro-api-dev-LoginAccountLambdaFunctionQualifiedArn"
@@ -1664,6 +1861,15 @@
             },
             "RequestPasswordResetLambdaFunctionQualifiedArn": "<REDACTED>",
             "ConfirmPasswordResetLambdaFunctionQualifiedArn": "<REDACTED>",
+            "ConfirmSignupLambdaFunctionQualifiedArn": {
+              "Description": "Current Lambda function version",
+              "Value": {
+                "Ref": "ConfirmSignupLambdaVersionhhVI6QLZf88ECFlKpV1McG1O4K97OeMbWlvrjeslsQ"
+              },
+              "Export": {
+                "Name": "sls-platoro-api-dev-ConfirmSignupLambdaFunctionQualifiedArn"
+              }
+            },
             "ServiceEndpoint": {
               "Description": "URL of the service endpoint",
               "Value": {
@@ -1712,7 +1918,7 @@
           "timeout": 6,
           "runtime": "python3.11",
           "vpc": {},
-          "versionLogicalId": "CreateGoalLambdaVersion5sIc2klLFmS8ulN1Jl9qzyNQAP9nK951qvTAQi9bKI"
+          "versionLogicalId": "CreateGoalLambdaVersion2wk3YDpshPe2A0zZx5C9HvSc5ZAfApqAtzDPGtVLM"
         },
         "getGoal": {
           "handler": "src/handlers/goals/get_goal.handler",
@@ -1748,7 +1954,7 @@
           "timeout": 6,
           "runtime": "python3.11",
           "vpc": {},
-          "versionLogicalId": "GetGoalLambdaVersionO4Lfro2IbBevjh1nMqnK6KnGh2zfscXXqjKKqb20"
+          "versionLogicalId": "GetGoalLambdaVersionHLmVdKp7YB2hALNaXLM2GGqTChZzFgrYG5D7SCE"
         },
         "updateGoalProgress": {
           "handler": "src/handlers/goals/update_goal_progress.handler",
@@ -1784,7 +1990,7 @@
           "timeout": 6,
           "runtime": "python3.11",
           "vpc": {},
-          "versionLogicalId": "UpdateGoalProgressLambdaVersionw9FeEGsqhWXbHUwmH9jZUZO8pgw8bkQG7YWTkEDdA"
+          "versionLogicalId": "UpdateGoalProgressLambdaVersionRIzEDtaWeLqzsmKG5EM2Er9LeaHxKvIKCor0eBehzBw"
         },
         "deleteGoal": {
           "handler": "src/handlers/goals/delete_goal.handler",
@@ -1820,7 +2026,7 @@
           "timeout": 6,
           "runtime": "python3.11",
           "vpc": {},
-          "versionLogicalId": "DeleteGoalLambdaVersionoCyg2WIbRaDdLh4XyjkCm9br3KtYWua4SpnOhFSsss"
+          "versionLogicalId": "DeleteGoalLambdaVersion3MM5ODCsJIpexRrZXSFHyTxJFha7kohoY492irpc"
         },
         "getSummary": {
           "handler": "src/handlers/goals/get_summary.handler",
@@ -1856,7 +2062,7 @@
           "timeout": 6,
           "runtime": "python3.11",
           "vpc": {},
-          "versionLogicalId": "GetSummaryLambdaVersionzaKioDn5brWQOdb8KtQeCd78xblSMPjM3rKvsBy5AE"
+          "versionLogicalId": "GetSummaryLambdaVersionTuLlyLu6LPdc8Y6nLRzkRAkGNfhQX5BXQk5zNWKvcQ"
         },
         "createAccount": {
           "handler": "src/handlers/accounts/create_account.handler",
@@ -1892,7 +2098,7 @@
           "timeout": 6,
           "runtime": "python3.11",
           "vpc": {},
-          "versionLogicalId": "CreateAccountLambdaVersionkR5JFMXHinHAC8dpYguzXjVSYhy0IsXaHOE9uGq4CKs"
+          "versionLogicalId": "CreateAccountLambdaVersion5rD8CMsRQX9ocdYubwNy5PzjfVQWWKBsQkCcA0FZs"
         },
         "loginAccount": {
           "handler": "src/handlers/accounts/login_account.handler",
@@ -1928,10 +2134,46 @@
           "timeout": 6,
           "runtime": "python3.11",
           "vpc": {},
-          "versionLogicalId": "LoginAccountLambdaVersionBOTRarnZ0XTeyYBRQYRVgGC1qcVNce0PEo0CeTwQ"
+          "versionLogicalId": "LoginAccountLambdaVersionkp4cOWCEFozPu14fJYIHWZkhl0Zax0ZRemnmpZ0v04"
         },
         "requestPasswordReset": "<REDACTED>",
-        "confirmPasswordReset": "<REDACTED>"
+        "confirmPasswordReset": "<REDACTED>",
+        "confirmSignup": {
+          "handler": "src/handlers/accounts/confirm_signup.handler",
+          "events": [
+            {
+              "http": {
+                "path": "account/confirm",
+                "method": "post",
+                "cors": {
+                  "origin": "*",
+                  "methods": [
+                    "OPTIONS",
+                    "POST"
+                  ],
+                  "headers": [
+                    "Content-Type",
+                    "X-Amz-Date",
+                    "Authorization",
+                    "X-Api-Key",
+                    "X-Amz-Security-Token",
+                    "X-Amz-User-Agent",
+                    "X-Amzn-Trace-Id"
+                  ],
+                  "allowCredentials": "<REDACTED>"
+                },
+                "integration": "AWS_PROXY"
+              }
+            }
+          ],
+          "name": "platoro-api-dev-confirmSignup",
+          "package": {},
+          "memory": 1024,
+          "timeout": 6,
+          "runtime": "python3.11",
+          "vpc": {},
+          "versionLogicalId": "ConfirmSignupLambdaVersionhhVI6QLZf88ECFlKpV1McG1O4K97OeMbWlvrjeslsQ"
+        }
       },
       "plugins": [
         "serverless-python-requirements"
@@ -1949,7 +2191,8 @@
       "environment": {
         "GOALS_TABLE": "goals",
         "COGNITO_USER_POOL_ID": "us-east-1_rg2KJCwn3",
-        "COGNITO_APP_CLIENT_ID": "1ld5rfsnbldiccjtpk6gmvtv9d"
+        "COGNITO_APP_CLIENT_ID": "1ld5rfsnbldiccjtpk6gmvtv9d",
+        "COGNITO_APP_CLIENT_SECRET": "<REDACTED>"
       },
       "iam": {
         "role": {
@@ -2018,6 +2261,12 @@
           },
           "RequestPasswordResetLogGroup": "<REDACTED>",
           "ConfirmPasswordResetLogGroup": "<REDACTED>",
+          "ConfirmSignupLogGroup": {
+            "Type": "AWS::Logs::LogGroup",
+            "Properties": {
+              "LogGroupName": "/aws/lambda/platoro-api-dev-confirmSignup"
+            }
+          },
           "IamRoleLambdaExecution": {
             "Type": "AWS::IAM::Role",
             "Properties": {
@@ -2112,7 +2361,7 @@
             "Properties": {
               "Code": {
                 "S3Bucket": "serverless-framework-deployments-us-east-1-d478aafd-e16f",
-                "S3Key": "serverless/platoro-api/dev/1752755780044-2025-07-17T12:36:20.044Z/platoro-api.zip"
+                "S3Key": "serverless/platoro-api/dev/1753315521039-2025-07-24T00:05:21.039Z/platoro-api.zip"
               },
               "Handler": "src/handlers/goals/create_goal.handler",
               "Runtime": "python3.11",
@@ -2123,7 +2372,8 @@
                 "Variables": {
                   "GOALS_TABLE": "goals",
                   "COGNITO_USER_POOL_ID": "us-east-1_rg2KJCwn3",
-                  "COGNITO_APP_CLIENT_ID": "1ld5rfsnbldiccjtpk6gmvtv9d"
+                  "COGNITO_APP_CLIENT_ID": "1ld5rfsnbldiccjtpk6gmvtv9d",
+                  "COGNITO_APP_CLIENT_SECRET": "<REDACTED>"
                 }
               },
               "Role": {
@@ -2142,7 +2392,7 @@
             "Properties": {
               "Code": {
                 "S3Bucket": "serverless-framework-deployments-us-east-1-d478aafd-e16f",
-                "S3Key": "serverless/platoro-api/dev/1752755780044-2025-07-17T12:36:20.044Z/platoro-api.zip"
+                "S3Key": "serverless/platoro-api/dev/1753315521039-2025-07-24T00:05:21.039Z/platoro-api.zip"
               },
               "Handler": "src/handlers/goals/get_goal.handler",
               "Runtime": "python3.11",
@@ -2153,7 +2403,8 @@
                 "Variables": {
                   "GOALS_TABLE": "goals",
                   "COGNITO_USER_POOL_ID": "us-east-1_rg2KJCwn3",
-                  "COGNITO_APP_CLIENT_ID": "1ld5rfsnbldiccjtpk6gmvtv9d"
+                  "COGNITO_APP_CLIENT_ID": "1ld5rfsnbldiccjtpk6gmvtv9d",
+                  "COGNITO_APP_CLIENT_SECRET": "<REDACTED>"
                 }
               },
               "Role": {
@@ -2172,7 +2423,7 @@
             "Properties": {
               "Code": {
                 "S3Bucket": "serverless-framework-deployments-us-east-1-d478aafd-e16f",
-                "S3Key": "serverless/platoro-api/dev/1752755780044-2025-07-17T12:36:20.044Z/platoro-api.zip"
+                "S3Key": "serverless/platoro-api/dev/1753315521039-2025-07-24T00:05:21.039Z/platoro-api.zip"
               },
               "Handler": "src/handlers/goals/update_goal_progress.handler",
               "Runtime": "python3.11",
@@ -2183,7 +2434,8 @@
                 "Variables": {
                   "GOALS_TABLE": "goals",
                   "COGNITO_USER_POOL_ID": "us-east-1_rg2KJCwn3",
-                  "COGNITO_APP_CLIENT_ID": "1ld5rfsnbldiccjtpk6gmvtv9d"
+                  "COGNITO_APP_CLIENT_ID": "1ld5rfsnbldiccjtpk6gmvtv9d",
+                  "COGNITO_APP_CLIENT_SECRET": "<REDACTED>"
                 }
               },
               "Role": {
@@ -2202,7 +2454,7 @@
             "Properties": {
               "Code": {
                 "S3Bucket": "serverless-framework-deployments-us-east-1-d478aafd-e16f",
-                "S3Key": "serverless/platoro-api/dev/1752755780044-2025-07-17T12:36:20.044Z/platoro-api.zip"
+                "S3Key": "serverless/platoro-api/dev/1753315521039-2025-07-24T00:05:21.039Z/platoro-api.zip"
               },
               "Handler": "src/handlers/goals/delete_goal.handler",
               "Runtime": "python3.11",
@@ -2213,7 +2465,8 @@
                 "Variables": {
                   "GOALS_TABLE": "goals",
                   "COGNITO_USER_POOL_ID": "us-east-1_rg2KJCwn3",
-                  "COGNITO_APP_CLIENT_ID": "1ld5rfsnbldiccjtpk6gmvtv9d"
+                  "COGNITO_APP_CLIENT_ID": "1ld5rfsnbldiccjtpk6gmvtv9d",
+                  "COGNITO_APP_CLIENT_SECRET": "<REDACTED>"
                 }
               },
               "Role": {
@@ -2232,7 +2485,7 @@
             "Properties": {
               "Code": {
                 "S3Bucket": "serverless-framework-deployments-us-east-1-d478aafd-e16f",
-                "S3Key": "serverless/platoro-api/dev/1752755780044-2025-07-17T12:36:20.044Z/platoro-api.zip"
+                "S3Key": "serverless/platoro-api/dev/1753315521039-2025-07-24T00:05:21.039Z/platoro-api.zip"
               },
               "Handler": "src/handlers/goals/get_summary.handler",
               "Runtime": "python3.11",
@@ -2243,7 +2496,8 @@
                 "Variables": {
                   "GOALS_TABLE": "goals",
                   "COGNITO_USER_POOL_ID": "us-east-1_rg2KJCwn3",
-                  "COGNITO_APP_CLIENT_ID": "1ld5rfsnbldiccjtpk6gmvtv9d"
+                  "COGNITO_APP_CLIENT_ID": "1ld5rfsnbldiccjtpk6gmvtv9d",
+                  "COGNITO_APP_CLIENT_SECRET": "<REDACTED>"
                 }
               },
               "Role": {
@@ -2262,7 +2516,7 @@
             "Properties": {
               "Code": {
                 "S3Bucket": "serverless-framework-deployments-us-east-1-d478aafd-e16f",
-                "S3Key": "serverless/platoro-api/dev/1752755780044-2025-07-17T12:36:20.044Z/platoro-api.zip"
+                "S3Key": "serverless/platoro-api/dev/1753315521039-2025-07-24T00:05:21.039Z/platoro-api.zip"
               },
               "Handler": "src/handlers/accounts/create_account.handler",
               "Runtime": "python3.11",
@@ -2273,7 +2527,8 @@
                 "Variables": {
                   "GOALS_TABLE": "goals",
                   "COGNITO_USER_POOL_ID": "us-east-1_rg2KJCwn3",
-                  "COGNITO_APP_CLIENT_ID": "1ld5rfsnbldiccjtpk6gmvtv9d"
+                  "COGNITO_APP_CLIENT_ID": "1ld5rfsnbldiccjtpk6gmvtv9d",
+                  "COGNITO_APP_CLIENT_SECRET": "<REDACTED>"
                 }
               },
               "Role": {
@@ -2292,7 +2547,7 @@
             "Properties": {
               "Code": {
                 "S3Bucket": "serverless-framework-deployments-us-east-1-d478aafd-e16f",
-                "S3Key": "serverless/platoro-api/dev/1752755780044-2025-07-17T12:36:20.044Z/platoro-api.zip"
+                "S3Key": "serverless/platoro-api/dev/1753315521039-2025-07-24T00:05:21.039Z/platoro-api.zip"
               },
               "Handler": "src/handlers/accounts/login_account.handler",
               "Runtime": "python3.11",
@@ -2303,7 +2558,8 @@
                 "Variables": {
                   "GOALS_TABLE": "goals",
                   "COGNITO_USER_POOL_ID": "us-east-1_rg2KJCwn3",
-                  "COGNITO_APP_CLIENT_ID": "1ld5rfsnbldiccjtpk6gmvtv9d"
+                  "COGNITO_APP_CLIENT_ID": "1ld5rfsnbldiccjtpk6gmvtv9d",
+                  "COGNITO_APP_CLIENT_SECRET": "<REDACTED>"
                 }
               },
               "Role": {
@@ -2319,78 +2575,119 @@
           },
           "RequestPasswordResetLambdaFunction": "<REDACTED>",
           "ConfirmPasswordResetLambdaFunction": "<REDACTED>",
-          "CreateGoalLambdaVersion5sIc2klLFmS8ulN1Jl9qzyNQAP9nK951qvTAQi9bKI": {
+          "ConfirmSignupLambdaFunction": {
+            "Type": "AWS::Lambda::Function",
+            "Properties": {
+              "Code": {
+                "S3Bucket": "serverless-framework-deployments-us-east-1-d478aafd-e16f",
+                "S3Key": "serverless/platoro-api/dev/1753315521039-2025-07-24T00:05:21.039Z/platoro-api.zip"
+              },
+              "Handler": "src/handlers/accounts/confirm_signup.handler",
+              "Runtime": "python3.11",
+              "FunctionName": "platoro-api-dev-confirmSignup",
+              "MemorySize": 1024,
+              "Timeout": 6,
+              "Environment": {
+                "Variables": {
+                  "GOALS_TABLE": "goals",
+                  "COGNITO_USER_POOL_ID": "us-east-1_rg2KJCwn3",
+                  "COGNITO_APP_CLIENT_ID": "1ld5rfsnbldiccjtpk6gmvtv9d",
+                  "COGNITO_APP_CLIENT_SECRET": "<REDACTED>"
+                }
+              },
+              "Role": {
+                "Fn::GetAtt": [
+                  "IamRoleLambdaExecution",
+                  "Arn"
+                ]
+              }
+            },
+            "DependsOn": [
+              "ConfirmSignupLogGroup"
+            ]
+          },
+          "CreateGoalLambdaVersion2wk3YDpshPe2A0zZx5C9HvSc5ZAfApqAtzDPGtVLM": {
             "Type": "AWS::Lambda::Version",
             "DeletionPolicy": "Retain",
             "Properties": {
               "FunctionName": {
                 "Ref": "CreateGoalLambdaFunction"
               },
-              "CodeSha256": "tXPNL4AEbLzOF224P6oLOsgOCpeaJE6fcDCmz/ptDgo="
+              "CodeSha256": "GxLOc06cxD/G6YriaBoT4S/aaj9DtN2brWgOqX0u/J4="
             }
           },
-          "GetGoalLambdaVersionO4Lfro2IbBevjh1nMqnK6KnGh2zfscXXqjKKqb20": {
+          "GetGoalLambdaVersionHLmVdKp7YB2hALNaXLM2GGqTChZzFgrYG5D7SCE": {
             "Type": "AWS::Lambda::Version",
             "DeletionPolicy": "Retain",
             "Properties": {
               "FunctionName": {
                 "Ref": "GetGoalLambdaFunction"
               },
-              "CodeSha256": "tXPNL4AEbLzOF224P6oLOsgOCpeaJE6fcDCmz/ptDgo="
+              "CodeSha256": "GxLOc06cxD/G6YriaBoT4S/aaj9DtN2brWgOqX0u/J4="
             }
           },
-          "UpdateGoalProgressLambdaVersionw9FeEGsqhWXbHUwmH9jZUZO8pgw8bkQG7YWTkEDdA": {
+          "UpdateGoalProgressLambdaVersionRIzEDtaWeLqzsmKG5EM2Er9LeaHxKvIKCor0eBehzBw": {
             "Type": "AWS::Lambda::Version",
             "DeletionPolicy": "Retain",
             "Properties": {
               "FunctionName": {
                 "Ref": "UpdateGoalProgressLambdaFunction"
               },
-              "CodeSha256": "tXPNL4AEbLzOF224P6oLOsgOCpeaJE6fcDCmz/ptDgo="
+              "CodeSha256": "GxLOc06cxD/G6YriaBoT4S/aaj9DtN2brWgOqX0u/J4="
             }
           },
-          "DeleteGoalLambdaVersionoCyg2WIbRaDdLh4XyjkCm9br3KtYWua4SpnOhFSsss": {
+          "DeleteGoalLambdaVersion3MM5ODCsJIpexRrZXSFHyTxJFha7kohoY492irpc": {
             "Type": "AWS::Lambda::Version",
             "DeletionPolicy": "Retain",
             "Properties": {
               "FunctionName": {
                 "Ref": "DeleteGoalLambdaFunction"
               },
-              "CodeSha256": "tXPNL4AEbLzOF224P6oLOsgOCpeaJE6fcDCmz/ptDgo="
+              "CodeSha256": "GxLOc06cxD/G6YriaBoT4S/aaj9DtN2brWgOqX0u/J4="
             }
           },
-          "GetSummaryLambdaVersionzaKioDn5brWQOdb8KtQeCd78xblSMPjM3rKvsBy5AE": {
+          "GetSummaryLambdaVersionTuLlyLu6LPdc8Y6nLRzkRAkGNfhQX5BXQk5zNWKvcQ": {
             "Type": "AWS::Lambda::Version",
             "DeletionPolicy": "Retain",
             "Properties": {
               "FunctionName": {
                 "Ref": "GetSummaryLambdaFunction"
               },
-              "CodeSha256": "tXPNL4AEbLzOF224P6oLOsgOCpeaJE6fcDCmz/ptDgo="
+              "CodeSha256": "GxLOc06cxD/G6YriaBoT4S/aaj9DtN2brWgOqX0u/J4="
             }
           },
-          "CreateAccountLambdaVersionkR5JFMXHinHAC8dpYguzXjVSYhy0IsXaHOE9uGq4CKs": {
+          "CreateAccountLambdaVersion5rD8CMsRQX9ocdYubwNy5PzjfVQWWKBsQkCcA0FZs": {
             "Type": "AWS::Lambda::Version",
             "DeletionPolicy": "Retain",
             "Properties": {
               "FunctionName": {
                 "Ref": "CreateAccountLambdaFunction"
               },
-              "CodeSha256": "tXPNL4AEbLzOF224P6oLOsgOCpeaJE6fcDCmz/ptDgo="
+              "CodeSha256": "GxLOc06cxD/G6YriaBoT4S/aaj9DtN2brWgOqX0u/J4="
             }
           },
-          "LoginAccountLambdaVersionBOTRarnZ0XTeyYBRQYRVgGC1qcVNce0PEo0CeTwQ": {
+          "LoginAccountLambdaVersionkp4cOWCEFozPu14fJYIHWZkhl0Zax0ZRemnmpZ0v04": {
             "Type": "AWS::Lambda::Version",
             "DeletionPolicy": "Retain",
             "Properties": {
               "FunctionName": {
                 "Ref": "LoginAccountLambdaFunction"
               },
-              "CodeSha256": "tXPNL4AEbLzOF224P6oLOsgOCpeaJE6fcDCmz/ptDgo="
+              "CodeSha256": "GxLOc06cxD/G6YriaBoT4S/aaj9DtN2brWgOqX0u/J4="
             }
           },
-          "RequestPasswordResetLambdaVersion73j0iWexNwU25XIN6wpvsd3h3oHbCQUrcRJXb8WKQ": "<REDACTED>",
-          "ConfirmPasswordResetLambdaVersionsrELOb5JLG41dLU5X927dr3KBzTpWETI3gNPhwog": "<REDACTED>",
+          "RequestPasswordResetLambdaVersionYi9t3fuEPk0W0sxfzVhDwMaZ30IocVFzfjnmpjazRE": "<REDACTED>",
+          "ConfirmPasswordResetLambdaVersionU9aH1dveA1Wky4sQmDT656Te4xFQyUokpaz6b8ScRTc": "<REDACTED>",
+          "ConfirmSignupLambdaVersionhhVI6QLZf88ECFlKpV1McG1O4K97OeMbWlvrjeslsQ": {
+            "Type": "AWS::Lambda::Version",
+            "DeletionPolicy": "Retain",
+            "Properties": {
+              "FunctionName": {
+                "Ref": "ConfirmSignupLambdaFunction"
+              },
+              "CodeSha256": "GxLOc06cxD/G6YriaBoT4S/aaj9DtN2brWgOqX0u/J4="
+            }
+          },
           "ApiGatewayRestApi": {
             "Type": "AWS::ApiGateway::RestApi",
             "Properties": {
@@ -2506,6 +2803,18 @@
                 "Ref": "ApiGatewayResourceAccount"
               },
               "PathPart": "confirm-reset",
+              "RestApiId": {
+                "Ref": "ApiGatewayRestApi"
+              }
+            }
+          },
+          "ApiGatewayResourceAccountConfirm": {
+            "Type": "AWS::ApiGateway::Resource",
+            "Properties": {
+              "ParentId": {
+                "Ref": "ApiGatewayResourceAccount"
+              },
+              "PathPart": "confirm",
               "RestApiId": {
                 "Ref": "ApiGatewayRestApi"
               }
@@ -2820,6 +3129,51 @@
               },
               "ResourceId": {
                 "Ref": "ApiGatewayResourceAccountConfirmDashreset"
+              },
+              "RestApiId": {
+                "Ref": "ApiGatewayRestApi"
+              }
+            }
+          },
+          "ApiGatewayMethodAccountConfirmOptions": {
+            "Type": "AWS::ApiGateway::Method",
+            "Properties": {
+              "AuthorizationType": "NONE",
+              "HttpMethod": "OPTIONS",
+              "MethodResponses": [
+                {
+                  "StatusCode": "200",
+                  "ResponseParameters": {
+                    "method.response.header.Access-Control-Allow-Origin": true,
+                    "method.response.header.Access-Control-Allow-Headers": true,
+                    "method.response.header.Access-Control-Allow-Methods": true
+                  },
+                  "ResponseModels": {}
+                }
+              ],
+              "RequestParameters": {},
+              "Integration": {
+                "Type": "MOCK",
+                "RequestTemplates": {
+                  "application/json": "{statusCode:200}"
+                },
+                "ContentHandling": "CONVERT_TO_TEXT",
+                "IntegrationResponses": [
+                  {
+                    "StatusCode": "200",
+                    "ResponseParameters": {
+                      "method.response.header.Access-Control-Allow-Origin": "'*'",
+                      "method.response.header.Access-Control-Allow-Headers": "'Content-Type,X-Amz-Date,Authorization,X-Api-Key,X-Amz-Security-Token,X-Amz-User-Agent,X-Amzn-Trace-Id'",
+                      "method.response.header.Access-Control-Allow-Methods": "'OPTIONS,POST'"
+                    },
+                    "ResponseTemplates": {
+                      "application/json": ""
+                    }
+                  }
+                ]
+              },
+              "ResourceId": {
+                "Ref": "ApiGatewayResourceAccountConfirm"
               },
               "RestApiId": {
                 "Ref": "ApiGatewayRestApi"
@@ -3240,7 +3594,53 @@
               "ConfirmPasswordResetLambdaPermissionApiGateway"
             ]
           },
-          "ApiGatewayDeployment1752755755997": {
+          "ApiGatewayMethodAccountConfirmPost": {
+            "Type": "AWS::ApiGateway::Method",
+            "Properties": {
+              "HttpMethod": "POST",
+              "RequestParameters": {},
+              "ResourceId": {
+                "Ref": "ApiGatewayResourceAccountConfirm"
+              },
+              "RestApiId": {
+                "Ref": "ApiGatewayRestApi"
+              },
+              "ApiKeyRequired": "<REDACTED>",
+              "AuthorizationType": "NONE",
+              "Integration": {
+                "IntegrationHttpMethod": "POST",
+                "Type": "AWS_PROXY",
+                "Uri": {
+                  "Fn::Join": [
+                    "",
+                    [
+                      "arn:",
+                      {
+                        "Ref": "AWS::Partition"
+                      },
+                      ":apigateway:",
+                      {
+                        "Ref": "AWS::Region"
+                      },
+                      ":lambda:path/2015-03-31/functions/",
+                      {
+                        "Fn::GetAtt": [
+                          "ConfirmSignupLambdaFunction",
+                          "Arn"
+                        ]
+                      },
+                      "/invocations"
+                    ]
+                  ]
+                }
+              },
+              "MethodResponses": []
+            },
+            "DependsOn": [
+              "ConfirmSignupLambdaPermissionApiGateway"
+            ]
+          },
+          "ApiGatewayDeployment1753315493244": {
             "Type": "AWS::ApiGateway::Deployment",
             "Properties": {
               "RestApiId": {
@@ -3256,6 +3656,7 @@
               "ApiGatewayMethodAccountLoginOptions",
               "ApiGatewayMethodAccountRequestDashresetOptions",
               "ApiGatewayMethodAccountConfirmDashresetOptions",
+              "ApiGatewayMethodAccountConfirmOptions",
               "ApiGatewayMethodGoalPost",
               "ApiGatewayMethodGoalGet",
               "ApiGatewayMethodGoalDashprogressPost",
@@ -3264,7 +3665,8 @@
               "ApiGatewayMethodAccountSignupPost",
               "ApiGatewayMethodAccountLoginPost",
               "ApiGatewayMethodAccountRequestDashresetPost",
-              "ApiGatewayMethodAccountConfirmDashresetPost"
+              "ApiGatewayMethodAccountConfirmDashresetPost",
+              "ApiGatewayMethodAccountConfirmPost"
             ]
           },
           "CreateGoalLambdaPermissionApiGateway": {
@@ -3527,7 +3929,44 @@
             }
           },
           "RequestPasswordResetLambdaPermissionApiGateway": "<REDACTED>",
-          "ConfirmPasswordResetLambdaPermissionApiGateway": "<REDACTED>"
+          "ConfirmPasswordResetLambdaPermissionApiGateway": "<REDACTED>",
+          "ConfirmSignupLambdaPermissionApiGateway": {
+            "Type": "AWS::Lambda::Permission",
+            "Properties": {
+              "FunctionName": {
+                "Fn::GetAtt": [
+                  "ConfirmSignupLambdaFunction",
+                  "Arn"
+                ]
+              },
+              "Action": "lambda:InvokeFunction",
+              "Principal": "apigateway.amazonaws.com",
+              "SourceArn": {
+                "Fn::Join": [
+                  "",
+                  [
+                    "arn:",
+                    {
+                      "Ref": "AWS::Partition"
+                    },
+                    ":execute-api:",
+                    {
+                      "Ref": "AWS::Region"
+                    },
+                    ":",
+                    {
+                      "Ref": "AWS::AccountId"
+                    },
+                    ":",
+                    {
+                      "Ref": "ApiGatewayRestApi"
+                    },
+                    "/*/*"
+                  ]
+                ]
+              }
+            }
+          }
         },
         "Outputs": {
           "ServerlessDeploymentBucketName": {
@@ -3539,7 +3978,7 @@
           "CreateGoalLambdaFunctionQualifiedArn": {
             "Description": "Current Lambda function version",
             "Value": {
-              "Ref": "CreateGoalLambdaVersion5sIc2klLFmS8ulN1Jl9qzyNQAP9nK951qvTAQi9bKI"
+              "Ref": "CreateGoalLambdaVersion2wk3YDpshPe2A0zZx5C9HvSc5ZAfApqAtzDPGtVLM"
             },
             "Export": {
               "Name": "sls-platoro-api-dev-CreateGoalLambdaFunctionQualifiedArn"
@@ -3548,7 +3987,7 @@
           "GetGoalLambdaFunctionQualifiedArn": {
             "Description": "Current Lambda function version",
             "Value": {
-              "Ref": "GetGoalLambdaVersionO4Lfro2IbBevjh1nMqnK6KnGh2zfscXXqjKKqb20"
+              "Ref": "GetGoalLambdaVersionHLmVdKp7YB2hALNaXLM2GGqTChZzFgrYG5D7SCE"
             },
             "Export": {
               "Name": "sls-platoro-api-dev-GetGoalLambdaFunctionQualifiedArn"
@@ -3557,7 +3996,7 @@
           "UpdateGoalProgressLambdaFunctionQualifiedArn": {
             "Description": "Current Lambda function version",
             "Value": {
-              "Ref": "UpdateGoalProgressLambdaVersionw9FeEGsqhWXbHUwmH9jZUZO8pgw8bkQG7YWTkEDdA"
+              "Ref": "UpdateGoalProgressLambdaVersionRIzEDtaWeLqzsmKG5EM2Er9LeaHxKvIKCor0eBehzBw"
             },
             "Export": {
               "Name": "sls-platoro-api-dev-UpdateGoalProgressLambdaFunctionQualifiedArn"
@@ -3566,7 +4005,7 @@
           "DeleteGoalLambdaFunctionQualifiedArn": {
             "Description": "Current Lambda function version",
             "Value": {
-              "Ref": "DeleteGoalLambdaVersionoCyg2WIbRaDdLh4XyjkCm9br3KtYWua4SpnOhFSsss"
+              "Ref": "DeleteGoalLambdaVersion3MM5ODCsJIpexRrZXSFHyTxJFha7kohoY492irpc"
             },
             "Export": {
               "Name": "sls-platoro-api-dev-DeleteGoalLambdaFunctionQualifiedArn"
@@ -3575,7 +4014,7 @@
           "GetSummaryLambdaFunctionQualifiedArn": {
             "Description": "Current Lambda function version",
             "Value": {
-              "Ref": "GetSummaryLambdaVersionzaKioDn5brWQOdb8KtQeCd78xblSMPjM3rKvsBy5AE"
+              "Ref": "GetSummaryLambdaVersionTuLlyLu6LPdc8Y6nLRzkRAkGNfhQX5BXQk5zNWKvcQ"
             },
             "Export": {
               "Name": "sls-platoro-api-dev-GetSummaryLambdaFunctionQualifiedArn"
@@ -3584,7 +4023,7 @@
           "CreateAccountLambdaFunctionQualifiedArn": {
             "Description": "Current Lambda function version",
             "Value": {
-              "Ref": "CreateAccountLambdaVersionkR5JFMXHinHAC8dpYguzXjVSYhy0IsXaHOE9uGq4CKs"
+              "Ref": "CreateAccountLambdaVersion5rD8CMsRQX9ocdYubwNy5PzjfVQWWKBsQkCcA0FZs"
             },
             "Export": {
               "Name": "sls-platoro-api-dev-CreateAccountLambdaFunctionQualifiedArn"
@@ -3593,7 +4032,7 @@
           "LoginAccountLambdaFunctionQualifiedArn": {
             "Description": "Current Lambda function version",
             "Value": {
-              "Ref": "LoginAccountLambdaVersionBOTRarnZ0XTeyYBRQYRVgGC1qcVNce0PEo0CeTwQ"
+              "Ref": "LoginAccountLambdaVersionkp4cOWCEFozPu14fJYIHWZkhl0Zax0ZRemnmpZ0v04"
             },
             "Export": {
               "Name": "sls-platoro-api-dev-LoginAccountLambdaFunctionQualifiedArn"
@@ -3601,6 +4040,15 @@
           },
           "RequestPasswordResetLambdaFunctionQualifiedArn": "<REDACTED>",
           "ConfirmPasswordResetLambdaFunctionQualifiedArn": "<REDACTED>",
+          "ConfirmSignupLambdaFunctionQualifiedArn": {
+            "Description": "Current Lambda function version",
+            "Value": {
+              "Ref": "ConfirmSignupLambdaVersionhhVI6QLZf88ECFlKpV1McG1O4K97OeMbWlvrjeslsQ"
+            },
+            "Export": {
+              "Name": "sls-platoro-api-dev-ConfirmSignupLambdaFunctionQualifiedArn"
+            }
+          },
           "ServiceEndpoint": {
             "Description": "URL of the service endpoint",
             "Value": {
@@ -3640,13 +4088,11 @@
       "serviceProvider": null,
       "instanceParameters": null
     },
-    "serviceRawFile": "service: platoro-api\n\n# frameworkVersion: '3'\n\nprovider:\n  name: aws\n  runtime: python3.11\n  region: us-east-1\n  environment:\n    GOALS_TABLE: goals\n    COGNITO_USER_POOL_ID: us-east-1_rg2KJCwn3\n    COGNITO_APP_CLIENT_ID: 1ld5rfsnbldiccjtpk6gmvtv9d\n  iam:\n    role:\n      statements:\n        - Effect: \"Allow\"\n          Action:\n            - \"dynamodb:PutItem\"\n            - \"dynamodb:GetItem\"\n            - \"dynamodb:Query\"\n            - \"dynamodb:DeleteItem\"\n            - \"dynamodb:UpdateItem\"\n          Resource:\n            - arn:aws:dynamodb:us-east-1:620214273874:table/goals\n\nfunctions:\n  createGoal:\n    handler: src/handlers/goals/create_goal.handler\n    events:\n      - http:\n          path: goal\n          method: post\n  getGoal:\n    handler: src/handlers/goals/get_goal.handler\n    events:\n      - http:\n          path: goal\n          method: get\n          cors: true\n  updateGoalProgress:\n    handler: src/handlers/goals/update_goal_progress.handler\n    events:\n      - http:\n          path: goal-progress\n          method: post\n          cors: true\n  deleteGoal:\n    handler: src/handlers/goals/delete_goal.handler\n    events:\n      - http:\n          path: goal\n          method: delete\n          cors: true\n  getSummary:\n    handler: src/handlers/goals/get_summary.handler\n    events:\n      - http:\n          path: summary\n          method: get\n          cors: true\n  createAccount:\n    handler: src/handlers/accounts/create_account.handler\n    events:\n      - http:\n          path: account/signup\n          method: post\n          cors: true\n  loginAccount:\n    handler: src/handlers/accounts/login_account.handler\n    events:\n      - http:\n          path: account/login\n          method: post\n          cors: true\n  requestPasswordReset:\n    handler: src/handlers/accounts/request_password_reset.handler\n    events:\n      - http:\n          path: account/request-reset\n          method: post\n          cors: true\n  confirmPasswordReset:\n    handler: src/handlers/accounts/confirm_password_reset.handler\n    events:\n      - http:\n          path: account/confirm-reset\n          method: post\n          cors: true\n\n\n\n\n\nplugins:\n  - serverless-python-requirements\n\ncustom:\n  pythonRequirements:\n    dockerizePip: true\n",
+    "serviceRawFile": "service: platoro-api\n\n# frameworkVersion: '3'\n\nprovider:\n  name: aws\n  runtime: python3.11\n  region: us-east-1\n  environment:\n    GOALS_TABLE: goals\n    COGNITO_USER_POOL_ID: us-east-1_rg2KJCwn3\n    COGNITO_APP_CLIENT_ID: 1ld5rfsnbldiccjtpk6gmvtv9d\n    COGNITO_APP_CLIENT_SECRET: 16idfdj1gq3mfl8accoqrhr3hvoita41buhrll0inn0bf52tv6qf\n  iam:\n    role:\n      statements:\n        - Effect: \"Allow\"\n          Action:\n            - \"dynamodb:PutItem\"\n            - \"dynamodb:GetItem\"\n            - \"dynamodb:Query\"\n            - \"dynamodb:DeleteItem\"\n            - \"dynamodb:UpdateItem\"\n          Resource:\n            - arn:aws:dynamodb:us-east-1:620214273874:table/goals\n\nfunctions:\n  createGoal:\n    handler: src/handlers/goals/create_goal.handler\n    events:\n      - http:\n          path: goal\n          method: post\n  getGoal:\n    handler: src/handlers/goals/get_goal.handler\n    events:\n      - http:\n          path: goal\n          method: get\n          cors: true\n  updateGoalProgress:\n    handler: src/handlers/goals/update_goal_progress.handler\n    events:\n      - http:\n          path: goal-progress\n          method: post\n          cors: true\n  deleteGoal:\n    handler: src/handlers/goals/delete_goal.handler\n    events:\n      - http:\n          path: goal\n          method: delete\n          cors: true\n  getSummary:\n    handler: src/handlers/goals/get_summary.handler\n    events:\n      - http:\n          path: summary\n          method: get\n          cors: true\n  createAccount:\n    handler: src/handlers/accounts/create_account.handler\n    events:\n      - http:\n          path: account/signup\n          method: post\n          cors: true\n  loginAccount:\n    handler: src/handlers/accounts/login_account.handler\n    events:\n      - http:\n          path: account/login\n          method: post\n          cors: true\n  requestPasswordReset:\n    handler: src/handlers/accounts/request_password_reset.handler\n    events:\n      - http:\n          path: account/request-reset\n          method: post\n          cors: true\n  confirmPasswordReset:\n    handler: src/handlers/accounts/confirm_password_reset.handler\n    events:\n      - http:\n          path: account/confirm-reset\n          method: post\n          cors: true\n  confirmSignup:\n    handler: src/handlers/accounts/confirm_signup.handler\n    events:\n      - http:\n          path: account/confirm\n          method: post\n          cors: true\n\n\n\n\n\nplugins:\n  - serverless-python-requirements\n\ncustom:\n  pythonRequirements:\n    dockerizePip: true\n",
     "command": [
       "deploy"
     ],
-    "options": {
-      "force": true
-    },
+    "options": {},
     "orgId": "31c475d2-75e4-4ea6-911a-787acde52b8f",
     "orgName": "platoro",
     "userId": "5TlKMGTF5Lvy43NGb0",
@@ -3655,60 +4101,60 @@
     "serviceProviderAwsCfStackName": "platoro-api-dev",
     "serviceProviderAwsCfStackId": "arn:aws:cloudformation:us-east-1:620214273874:stack/platoro-api-dev/5d499100-5783-11f0-acce-1207a014fdc5",
     "serviceProviderAwsCfStackCreated": "2025-07-02T20:30:16.692Z",
-    "serviceProviderAwsCfStackUpdated": "2025-07-17T12:24:28.924Z",
+    "serviceProviderAwsCfStackUpdated": "2025-07-22T00:48:41.465Z",
     "serviceProviderAwsCfStackStatus": "UPDATE_COMPLETE",
     "serviceProviderAwsCfStackOutputs": [
       {
         "OutputKey": "DeleteGoalLambdaFunctionQualifiedArn",
-        "OutputValue": "arn:aws:lambda:us-east-1:620214273874:function:platoro-api-dev-deleteGoal:15",
+        "OutputValue": "arn:aws:lambda:us-east-1:620214273874:function:platoro-api-dev-deleteGoal:20",
         "Description": "Current Lambda function version",
         "ExportName": "sls-platoro-api-dev-DeleteGoalLambdaFunctionQualifiedArn"
       },
       {
         "OutputKey": "RequestPasswordResetLambdaFunctionQualifiedArn",
-        "OutputValue": "arn:aws:lambda:us-east-1:620214273874:function:platoro-api-dev-requestPasswordReset:2",
+        "OutputValue": "arn:aws:lambda:us-east-1:620214273874:function:platoro-api-dev-requestPasswordReset:7",
         "Description": "Current Lambda function version",
         "ExportName": "sls-platoro-api-dev-RequestPasswordResetLambdaFunctionQualifiedArn"
       },
       {
         "OutputKey": "ConfirmPasswordResetLambdaFunctionQualifiedArn",
-        "OutputValue": "arn:aws:lambda:us-east-1:620214273874:function:platoro-api-dev-confirmPasswordReset:2",
+        "OutputValue": "arn:aws:lambda:us-east-1:620214273874:function:platoro-api-dev-confirmPasswordReset:7",
         "Description": "Current Lambda function version",
         "ExportName": "sls-platoro-api-dev-ConfirmPasswordResetLambdaFunctionQualifiedArn"
       },
       {
         "OutputKey": "GetSummaryLambdaFunctionQualifiedArn",
-        "OutputValue": "arn:aws:lambda:us-east-1:620214273874:function:platoro-api-dev-getSummary:15",
+        "OutputValue": "arn:aws:lambda:us-east-1:620214273874:function:platoro-api-dev-getSummary:20",
         "Description": "Current Lambda function version",
         "ExportName": "sls-platoro-api-dev-GetSummaryLambdaFunctionQualifiedArn"
       },
       {
         "OutputKey": "LoginAccountLambdaFunctionQualifiedArn",
-        "OutputValue": "arn:aws:lambda:us-east-1:620214273874:function:platoro-api-dev-loginAccount:2",
+        "OutputValue": "arn:aws:lambda:us-east-1:620214273874:function:platoro-api-dev-loginAccount:7",
         "Description": "Current Lambda function version",
         "ExportName": "sls-platoro-api-dev-LoginAccountLambdaFunctionQualifiedArn"
       },
       {
         "OutputKey": "GetGoalLambdaFunctionQualifiedArn",
-        "OutputValue": "arn:aws:lambda:us-east-1:620214273874:function:platoro-api-dev-getGoal:13",
+        "OutputValue": "arn:aws:lambda:us-east-1:620214273874:function:platoro-api-dev-getGoal:18",
         "Description": "Current Lambda function version",
         "ExportName": "sls-platoro-api-dev-GetGoalLambdaFunctionQualifiedArn"
       },
       {
         "OutputKey": "UpdateGoalProgressLambdaFunctionQualifiedArn",
-        "OutputValue": "arn:aws:lambda:us-east-1:620214273874:function:platoro-api-dev-updateGoalProgress:15",
+        "OutputValue": "arn:aws:lambda:us-east-1:620214273874:function:platoro-api-dev-updateGoalProgress:20",
         "Description": "Current Lambda function version",
         "ExportName": "sls-platoro-api-dev-UpdateGoalProgressLambdaFunctionQualifiedArn"
       },
       {
         "OutputKey": "CreateGoalLambdaFunctionQualifiedArn",
-        "OutputValue": "arn:aws:lambda:us-east-1:620214273874:function:platoro-api-dev-createGoal:17",
+        "OutputValue": "arn:aws:lambda:us-east-1:620214273874:function:platoro-api-dev-createGoal:22",
         "Description": "Current Lambda function version",
         "ExportName": "sls-platoro-api-dev-CreateGoalLambdaFunctionQualifiedArn"
       },
       {
         "OutputKey": "CreateAccountLambdaFunctionQualifiedArn",
-        "OutputValue": "arn:aws:lambda:us-east-1:620214273874:function:platoro-api-dev-createAccount:2",
+        "OutputValue": "arn:aws:lambda:us-east-1:620214273874:function:platoro-api-dev-createAccount:7",
         "Description": "Current Lambda function version",
         "ExportName": "sls-platoro-api-dev-CreateAccountLambdaFunctionQualifiedArn"
       },
@@ -3772,6 +4218,12 @@
         },
         "RequestPasswordResetLogGroup": "<REDACTED>",
         "ConfirmPasswordResetLogGroup": "<REDACTED>",
+        "ConfirmSignupLogGroup": {
+          "Type": "AWS::Logs::LogGroup",
+          "Properties": {
+            "LogGroupName": "/aws/lambda/platoro-api-dev-confirmSignup"
+          }
+        },
         "IamRoleLambdaExecution": {
           "Type": "AWS::IAM::Role",
           "Properties": {
@@ -3866,7 +4318,7 @@
           "Properties": {
             "Code": {
               "S3Bucket": "serverless-framework-deployments-us-east-1-d478aafd-e16f",
-              "S3Key": "serverless/platoro-api/dev/1752755780044-2025-07-17T12:36:20.044Z/platoro-api.zip"
+              "S3Key": "serverless/platoro-api/dev/1753315521039-2025-07-24T00:05:21.039Z/platoro-api.zip"
             },
             "Handler": "src/handlers/goals/create_goal.handler",
             "Runtime": "python3.11",
@@ -3877,7 +4329,8 @@
               "Variables": {
                 "GOALS_TABLE": "goals",
                 "COGNITO_USER_POOL_ID": "us-east-1_rg2KJCwn3",
-                "COGNITO_APP_CLIENT_ID": "1ld5rfsnbldiccjtpk6gmvtv9d"
+                "COGNITO_APP_CLIENT_ID": "1ld5rfsnbldiccjtpk6gmvtv9d",
+                "COGNITO_APP_CLIENT_SECRET": "<REDACTED>"
               }
             },
             "Role": {
@@ -3896,7 +4349,7 @@
           "Properties": {
             "Code": {
               "S3Bucket": "serverless-framework-deployments-us-east-1-d478aafd-e16f",
-              "S3Key": "serverless/platoro-api/dev/1752755780044-2025-07-17T12:36:20.044Z/platoro-api.zip"
+              "S3Key": "serverless/platoro-api/dev/1753315521039-2025-07-24T00:05:21.039Z/platoro-api.zip"
             },
             "Handler": "src/handlers/goals/get_goal.handler",
             "Runtime": "python3.11",
@@ -3907,7 +4360,8 @@
               "Variables": {
                 "GOALS_TABLE": "goals",
                 "COGNITO_USER_POOL_ID": "us-east-1_rg2KJCwn3",
-                "COGNITO_APP_CLIENT_ID": "1ld5rfsnbldiccjtpk6gmvtv9d"
+                "COGNITO_APP_CLIENT_ID": "1ld5rfsnbldiccjtpk6gmvtv9d",
+                "COGNITO_APP_CLIENT_SECRET": "<REDACTED>"
               }
             },
             "Role": {
@@ -3926,7 +4380,7 @@
           "Properties": {
             "Code": {
               "S3Bucket": "serverless-framework-deployments-us-east-1-d478aafd-e16f",
-              "S3Key": "serverless/platoro-api/dev/1752755780044-2025-07-17T12:36:20.044Z/platoro-api.zip"
+              "S3Key": "serverless/platoro-api/dev/1753315521039-2025-07-24T00:05:21.039Z/platoro-api.zip"
             },
             "Handler": "src/handlers/goals/update_goal_progress.handler",
             "Runtime": "python3.11",
@@ -3937,7 +4391,8 @@
               "Variables": {
                 "GOALS_TABLE": "goals",
                 "COGNITO_USER_POOL_ID": "us-east-1_rg2KJCwn3",
-                "COGNITO_APP_CLIENT_ID": "1ld5rfsnbldiccjtpk6gmvtv9d"
+                "COGNITO_APP_CLIENT_ID": "1ld5rfsnbldiccjtpk6gmvtv9d",
+                "COGNITO_APP_CLIENT_SECRET": "<REDACTED>"
               }
             },
             "Role": {
@@ -3956,7 +4411,7 @@
           "Properties": {
             "Code": {
               "S3Bucket": "serverless-framework-deployments-us-east-1-d478aafd-e16f",
-              "S3Key": "serverless/platoro-api/dev/1752755780044-2025-07-17T12:36:20.044Z/platoro-api.zip"
+              "S3Key": "serverless/platoro-api/dev/1753315521039-2025-07-24T00:05:21.039Z/platoro-api.zip"
             },
             "Handler": "src/handlers/goals/delete_goal.handler",
             "Runtime": "python3.11",
@@ -3967,7 +4422,8 @@
               "Variables": {
                 "GOALS_TABLE": "goals",
                 "COGNITO_USER_POOL_ID": "us-east-1_rg2KJCwn3",
-                "COGNITO_APP_CLIENT_ID": "1ld5rfsnbldiccjtpk6gmvtv9d"
+                "COGNITO_APP_CLIENT_ID": "1ld5rfsnbldiccjtpk6gmvtv9d",
+                "COGNITO_APP_CLIENT_SECRET": "<REDACTED>"
               }
             },
             "Role": {
@@ -3986,7 +4442,7 @@
           "Properties": {
             "Code": {
               "S3Bucket": "serverless-framework-deployments-us-east-1-d478aafd-e16f",
-              "S3Key": "serverless/platoro-api/dev/1752755780044-2025-07-17T12:36:20.044Z/platoro-api.zip"
+              "S3Key": "serverless/platoro-api/dev/1753315521039-2025-07-24T00:05:21.039Z/platoro-api.zip"
             },
             "Handler": "src/handlers/goals/get_summary.handler",
             "Runtime": "python3.11",
@@ -3997,7 +4453,8 @@
               "Variables": {
                 "GOALS_TABLE": "goals",
                 "COGNITO_USER_POOL_ID": "us-east-1_rg2KJCwn3",
-                "COGNITO_APP_CLIENT_ID": "1ld5rfsnbldiccjtpk6gmvtv9d"
+                "COGNITO_APP_CLIENT_ID": "1ld5rfsnbldiccjtpk6gmvtv9d",
+                "COGNITO_APP_CLIENT_SECRET": "<REDACTED>"
               }
             },
             "Role": {
@@ -4016,7 +4473,7 @@
           "Properties": {
             "Code": {
               "S3Bucket": "serverless-framework-deployments-us-east-1-d478aafd-e16f",
-              "S3Key": "serverless/platoro-api/dev/1752755780044-2025-07-17T12:36:20.044Z/platoro-api.zip"
+              "S3Key": "serverless/platoro-api/dev/1753315521039-2025-07-24T00:05:21.039Z/platoro-api.zip"
             },
             "Handler": "src/handlers/accounts/create_account.handler",
             "Runtime": "python3.11",
@@ -4027,7 +4484,8 @@
               "Variables": {
                 "GOALS_TABLE": "goals",
                 "COGNITO_USER_POOL_ID": "us-east-1_rg2KJCwn3",
-                "COGNITO_APP_CLIENT_ID": "1ld5rfsnbldiccjtpk6gmvtv9d"
+                "COGNITO_APP_CLIENT_ID": "1ld5rfsnbldiccjtpk6gmvtv9d",
+                "COGNITO_APP_CLIENT_SECRET": "<REDACTED>"
               }
             },
             "Role": {
@@ -4046,7 +4504,7 @@
           "Properties": {
             "Code": {
               "S3Bucket": "serverless-framework-deployments-us-east-1-d478aafd-e16f",
-              "S3Key": "serverless/platoro-api/dev/1752755780044-2025-07-17T12:36:20.044Z/platoro-api.zip"
+              "S3Key": "serverless/platoro-api/dev/1753315521039-2025-07-24T00:05:21.039Z/platoro-api.zip"
             },
             "Handler": "src/handlers/accounts/login_account.handler",
             "Runtime": "python3.11",
@@ -4057,7 +4515,8 @@
               "Variables": {
                 "GOALS_TABLE": "goals",
                 "COGNITO_USER_POOL_ID": "us-east-1_rg2KJCwn3",
-                "COGNITO_APP_CLIENT_ID": "1ld5rfsnbldiccjtpk6gmvtv9d"
+                "COGNITO_APP_CLIENT_ID": "1ld5rfsnbldiccjtpk6gmvtv9d",
+                "COGNITO_APP_CLIENT_SECRET": "<REDACTED>"
               }
             },
             "Role": {
@@ -4073,78 +4532,119 @@
         },
         "RequestPasswordResetLambdaFunction": "<REDACTED>",
         "ConfirmPasswordResetLambdaFunction": "<REDACTED>",
-        "CreateGoalLambdaVersion5sIc2klLFmS8ulN1Jl9qzyNQAP9nK951qvTAQi9bKI": {
+        "ConfirmSignupLambdaFunction": {
+          "Type": "AWS::Lambda::Function",
+          "Properties": {
+            "Code": {
+              "S3Bucket": "serverless-framework-deployments-us-east-1-d478aafd-e16f",
+              "S3Key": "serverless/platoro-api/dev/1753315521039-2025-07-24T00:05:21.039Z/platoro-api.zip"
+            },
+            "Handler": "src/handlers/accounts/confirm_signup.handler",
+            "Runtime": "python3.11",
+            "FunctionName": "platoro-api-dev-confirmSignup",
+            "MemorySize": 1024,
+            "Timeout": 6,
+            "Environment": {
+              "Variables": {
+                "GOALS_TABLE": "goals",
+                "COGNITO_USER_POOL_ID": "us-east-1_rg2KJCwn3",
+                "COGNITO_APP_CLIENT_ID": "1ld5rfsnbldiccjtpk6gmvtv9d",
+                "COGNITO_APP_CLIENT_SECRET": "<REDACTED>"
+              }
+            },
+            "Role": {
+              "Fn::GetAtt": [
+                "IamRoleLambdaExecution",
+                "Arn"
+              ]
+            }
+          },
+          "DependsOn": [
+            "ConfirmSignupLogGroup"
+          ]
+        },
+        "CreateGoalLambdaVersion2wk3YDpshPe2A0zZx5C9HvSc5ZAfApqAtzDPGtVLM": {
           "Type": "AWS::Lambda::Version",
           "DeletionPolicy": "Retain",
           "Properties": {
             "FunctionName": {
               "Ref": "CreateGoalLambdaFunction"
             },
-            "CodeSha256": "tXPNL4AEbLzOF224P6oLOsgOCpeaJE6fcDCmz/ptDgo="
+            "CodeSha256": "GxLOc06cxD/G6YriaBoT4S/aaj9DtN2brWgOqX0u/J4="
           }
         },
-        "GetGoalLambdaVersionO4Lfro2IbBevjh1nMqnK6KnGh2zfscXXqjKKqb20": {
+        "GetGoalLambdaVersionHLmVdKp7YB2hALNaXLM2GGqTChZzFgrYG5D7SCE": {
           "Type": "AWS::Lambda::Version",
           "DeletionPolicy": "Retain",
           "Properties": {
             "FunctionName": {
               "Ref": "GetGoalLambdaFunction"
             },
-            "CodeSha256": "tXPNL4AEbLzOF224P6oLOsgOCpeaJE6fcDCmz/ptDgo="
+            "CodeSha256": "GxLOc06cxD/G6YriaBoT4S/aaj9DtN2brWgOqX0u/J4="
           }
         },
-        "UpdateGoalProgressLambdaVersionw9FeEGsqhWXbHUwmH9jZUZO8pgw8bkQG7YWTkEDdA": {
+        "UpdateGoalProgressLambdaVersionRIzEDtaWeLqzsmKG5EM2Er9LeaHxKvIKCor0eBehzBw": {
           "Type": "AWS::Lambda::Version",
           "DeletionPolicy": "Retain",
           "Properties": {
             "FunctionName": {
               "Ref": "UpdateGoalProgressLambdaFunction"
             },
-            "CodeSha256": "tXPNL4AEbLzOF224P6oLOsgOCpeaJE6fcDCmz/ptDgo="
+            "CodeSha256": "GxLOc06cxD/G6YriaBoT4S/aaj9DtN2brWgOqX0u/J4="
           }
         },
-        "DeleteGoalLambdaVersionoCyg2WIbRaDdLh4XyjkCm9br3KtYWua4SpnOhFSsss": {
+        "DeleteGoalLambdaVersion3MM5ODCsJIpexRrZXSFHyTxJFha7kohoY492irpc": {
           "Type": "AWS::Lambda::Version",
           "DeletionPolicy": "Retain",
           "Properties": {
             "FunctionName": {
               "Ref": "DeleteGoalLambdaFunction"
             },
-            "CodeSha256": "tXPNL4AEbLzOF224P6oLOsgOCpeaJE6fcDCmz/ptDgo="
+            "CodeSha256": "GxLOc06cxD/G6YriaBoT4S/aaj9DtN2brWgOqX0u/J4="
           }
         },
-        "GetSummaryLambdaVersionzaKioDn5brWQOdb8KtQeCd78xblSMPjM3rKvsBy5AE": {
+        "GetSummaryLambdaVersionTuLlyLu6LPdc8Y6nLRzkRAkGNfhQX5BXQk5zNWKvcQ": {
           "Type": "AWS::Lambda::Version",
           "DeletionPolicy": "Retain",
           "Properties": {
             "FunctionName": {
               "Ref": "GetSummaryLambdaFunction"
             },
-            "CodeSha256": "tXPNL4AEbLzOF224P6oLOsgOCpeaJE6fcDCmz/ptDgo="
+            "CodeSha256": "GxLOc06cxD/G6YriaBoT4S/aaj9DtN2brWgOqX0u/J4="
           }
         },
-        "CreateAccountLambdaVersionkR5JFMXHinHAC8dpYguzXjVSYhy0IsXaHOE9uGq4CKs": {
+        "CreateAccountLambdaVersion5rD8CMsRQX9ocdYubwNy5PzjfVQWWKBsQkCcA0FZs": {
           "Type": "AWS::Lambda::Version",
           "DeletionPolicy": "Retain",
           "Properties": {
             "FunctionName": {
               "Ref": "CreateAccountLambdaFunction"
             },
-            "CodeSha256": "tXPNL4AEbLzOF224P6oLOsgOCpeaJE6fcDCmz/ptDgo="
+            "CodeSha256": "GxLOc06cxD/G6YriaBoT4S/aaj9DtN2brWgOqX0u/J4="
           }
         },
-        "LoginAccountLambdaVersionBOTRarnZ0XTeyYBRQYRVgGC1qcVNce0PEo0CeTwQ": {
+        "LoginAccountLambdaVersionkp4cOWCEFozPu14fJYIHWZkhl0Zax0ZRemnmpZ0v04": {
           "Type": "AWS::Lambda::Version",
           "DeletionPolicy": "Retain",
           "Properties": {
             "FunctionName": {
               "Ref": "LoginAccountLambdaFunction"
             },
-            "CodeSha256": "tXPNL4AEbLzOF224P6oLOsgOCpeaJE6fcDCmz/ptDgo="
+            "CodeSha256": "GxLOc06cxD/G6YriaBoT4S/aaj9DtN2brWgOqX0u/J4="
           }
         },
-        "RequestPasswordResetLambdaVersion73j0iWexNwU25XIN6wpvsd3h3oHbCQUrcRJXb8WKQ": "<REDACTED>",
-        "ConfirmPasswordResetLambdaVersionsrELOb5JLG41dLU5X927dr3KBzTpWETI3gNPhwog": "<REDACTED>",
+        "RequestPasswordResetLambdaVersionYi9t3fuEPk0W0sxfzVhDwMaZ30IocVFzfjnmpjazRE": "<REDACTED>",
+        "ConfirmPasswordResetLambdaVersionU9aH1dveA1Wky4sQmDT656Te4xFQyUokpaz6b8ScRTc": "<REDACTED>",
+        "ConfirmSignupLambdaVersionhhVI6QLZf88ECFlKpV1McG1O4K97OeMbWlvrjeslsQ": {
+          "Type": "AWS::Lambda::Version",
+          "DeletionPolicy": "Retain",
+          "Properties": {
+            "FunctionName": {
+              "Ref": "ConfirmSignupLambdaFunction"
+            },
+            "CodeSha256": "GxLOc06cxD/G6YriaBoT4S/aaj9DtN2brWgOqX0u/J4="
+          }
+        },
         "ApiGatewayRestApi": {
           "Type": "AWS::ApiGateway::RestApi",
           "Properties": {
@@ -4260,6 +4760,18 @@
               "Ref": "ApiGatewayResourceAccount"
             },
             "PathPart": "confirm-reset",
+            "RestApiId": {
+              "Ref": "ApiGatewayRestApi"
+            }
+          }
+        },
+        "ApiGatewayResourceAccountConfirm": {
+          "Type": "AWS::ApiGateway::Resource",
+          "Properties": {
+            "ParentId": {
+              "Ref": "ApiGatewayResourceAccount"
+            },
+            "PathPart": "confirm",
             "RestApiId": {
               "Ref": "ApiGatewayRestApi"
             }
@@ -4574,6 +5086,51 @@
             },
             "ResourceId": {
               "Ref": "ApiGatewayResourceAccountConfirmDashreset"
+            },
+            "RestApiId": {
+              "Ref": "ApiGatewayRestApi"
+            }
+          }
+        },
+        "ApiGatewayMethodAccountConfirmOptions": {
+          "Type": "AWS::ApiGateway::Method",
+          "Properties": {
+            "AuthorizationType": "NONE",
+            "HttpMethod": "OPTIONS",
+            "MethodResponses": [
+              {
+                "StatusCode": "200",
+                "ResponseParameters": {
+                  "method.response.header.Access-Control-Allow-Origin": true,
+                  "method.response.header.Access-Control-Allow-Headers": true,
+                  "method.response.header.Access-Control-Allow-Methods": true
+                },
+                "ResponseModels": {}
+              }
+            ],
+            "RequestParameters": {},
+            "Integration": {
+              "Type": "MOCK",
+              "RequestTemplates": {
+                "application/json": "{statusCode:200}"
+              },
+              "ContentHandling": "CONVERT_TO_TEXT",
+              "IntegrationResponses": [
+                {
+                  "StatusCode": "200",
+                  "ResponseParameters": {
+                    "method.response.header.Access-Control-Allow-Origin": "'*'",
+                    "method.response.header.Access-Control-Allow-Headers": "'Content-Type,X-Amz-Date,Authorization,X-Api-Key,X-Amz-Security-Token,X-Amz-User-Agent,X-Amzn-Trace-Id'",
+                    "method.response.header.Access-Control-Allow-Methods": "'OPTIONS,POST'"
+                  },
+                  "ResponseTemplates": {
+                    "application/json": ""
+                  }
+                }
+              ]
+            },
+            "ResourceId": {
+              "Ref": "ApiGatewayResourceAccountConfirm"
             },
             "RestApiId": {
               "Ref": "ApiGatewayRestApi"
@@ -4994,7 +5551,53 @@
             "ConfirmPasswordResetLambdaPermissionApiGateway"
           ]
         },
-        "ApiGatewayDeployment1752755755997": {
+        "ApiGatewayMethodAccountConfirmPost": {
+          "Type": "AWS::ApiGateway::Method",
+          "Properties": {
+            "HttpMethod": "POST",
+            "RequestParameters": {},
+            "ResourceId": {
+              "Ref": "ApiGatewayResourceAccountConfirm"
+            },
+            "RestApiId": {
+              "Ref": "ApiGatewayRestApi"
+            },
+            "ApiKeyRequired": "<REDACTED>",
+            "AuthorizationType": "NONE",
+            "Integration": {
+              "IntegrationHttpMethod": "POST",
+              "Type": "AWS_PROXY",
+              "Uri": {
+                "Fn::Join": [
+                  "",
+                  [
+                    "arn:",
+                    {
+                      "Ref": "AWS::Partition"
+                    },
+                    ":apigateway:",
+                    {
+                      "Ref": "AWS::Region"
+                    },
+                    ":lambda:path/2015-03-31/functions/",
+                    {
+                      "Fn::GetAtt": [
+                        "ConfirmSignupLambdaFunction",
+                        "Arn"
+                      ]
+                    },
+                    "/invocations"
+                  ]
+                ]
+              }
+            },
+            "MethodResponses": []
+          },
+          "DependsOn": [
+            "ConfirmSignupLambdaPermissionApiGateway"
+          ]
+        },
+        "ApiGatewayDeployment1753315493244": {
           "Type": "AWS::ApiGateway::Deployment",
           "Properties": {
             "RestApiId": {
@@ -5010,6 +5613,7 @@
             "ApiGatewayMethodAccountLoginOptions",
             "ApiGatewayMethodAccountRequestDashresetOptions",
             "ApiGatewayMethodAccountConfirmDashresetOptions",
+            "ApiGatewayMethodAccountConfirmOptions",
             "ApiGatewayMethodGoalPost",
             "ApiGatewayMethodGoalGet",
             "ApiGatewayMethodGoalDashprogressPost",
@@ -5018,7 +5622,8 @@
             "ApiGatewayMethodAccountSignupPost",
             "ApiGatewayMethodAccountLoginPost",
             "ApiGatewayMethodAccountRequestDashresetPost",
-            "ApiGatewayMethodAccountConfirmDashresetPost"
+            "ApiGatewayMethodAccountConfirmDashresetPost",
+            "ApiGatewayMethodAccountConfirmPost"
           ]
         },
         "CreateGoalLambdaPermissionApiGateway": {
@@ -5281,7 +5886,44 @@
           }
         },
         "RequestPasswordResetLambdaPermissionApiGateway": "<REDACTED>",
-        "ConfirmPasswordResetLambdaPermissionApiGateway": "<REDACTED>"
+        "ConfirmPasswordResetLambdaPermissionApiGateway": "<REDACTED>",
+        "ConfirmSignupLambdaPermissionApiGateway": {
+          "Type": "AWS::Lambda::Permission",
+          "Properties": {
+            "FunctionName": {
+              "Fn::GetAtt": [
+                "ConfirmSignupLambdaFunction",
+                "Arn"
+              ]
+            },
+            "Action": "lambda:InvokeFunction",
+            "Principal": "apigateway.amazonaws.com",
+            "SourceArn": {
+              "Fn::Join": [
+                "",
+                [
+                  "arn:",
+                  {
+                    "Ref": "AWS::Partition"
+                  },
+                  ":execute-api:",
+                  {
+                    "Ref": "AWS::Region"
+                  },
+                  ":",
+                  {
+                    "Ref": "AWS::AccountId"
+                  },
+                  ":",
+                  {
+                    "Ref": "ApiGatewayRestApi"
+                  },
+                  "/*/*"
+                ]
+              ]
+            }
+          }
+        }
       },
       "Outputs": {
         "ServerlessDeploymentBucketName": {
@@ -5293,7 +5935,7 @@
         "CreateGoalLambdaFunctionQualifiedArn": {
           "Description": "Current Lambda function version",
           "Value": {
-            "Ref": "CreateGoalLambdaVersion5sIc2klLFmS8ulN1Jl9qzyNQAP9nK951qvTAQi9bKI"
+            "Ref": "CreateGoalLambdaVersion2wk3YDpshPe2A0zZx5C9HvSc5ZAfApqAtzDPGtVLM"
           },
           "Export": {
             "Name": "sls-platoro-api-dev-CreateGoalLambdaFunctionQualifiedArn"
@@ -5302,7 +5944,7 @@
         "GetGoalLambdaFunctionQualifiedArn": {
           "Description": "Current Lambda function version",
           "Value": {
-            "Ref": "GetGoalLambdaVersionO4Lfro2IbBevjh1nMqnK6KnGh2zfscXXqjKKqb20"
+            "Ref": "GetGoalLambdaVersionHLmVdKp7YB2hALNaXLM2GGqTChZzFgrYG5D7SCE"
           },
           "Export": {
             "Name": "sls-platoro-api-dev-GetGoalLambdaFunctionQualifiedArn"
@@ -5311,7 +5953,7 @@
         "UpdateGoalProgressLambdaFunctionQualifiedArn": {
           "Description": "Current Lambda function version",
           "Value": {
-            "Ref": "UpdateGoalProgressLambdaVersionw9FeEGsqhWXbHUwmH9jZUZO8pgw8bkQG7YWTkEDdA"
+            "Ref": "UpdateGoalProgressLambdaVersionRIzEDtaWeLqzsmKG5EM2Er9LeaHxKvIKCor0eBehzBw"
           },
           "Export": {
             "Name": "sls-platoro-api-dev-UpdateGoalProgressLambdaFunctionQualifiedArn"
@@ -5320,7 +5962,7 @@
         "DeleteGoalLambdaFunctionQualifiedArn": {
           "Description": "Current Lambda function version",
           "Value": {
-            "Ref": "DeleteGoalLambdaVersionoCyg2WIbRaDdLh4XyjkCm9br3KtYWua4SpnOhFSsss"
+            "Ref": "DeleteGoalLambdaVersion3MM5ODCsJIpexRrZXSFHyTxJFha7kohoY492irpc"
           },
           "Export": {
             "Name": "sls-platoro-api-dev-DeleteGoalLambdaFunctionQualifiedArn"
@@ -5329,7 +5971,7 @@
         "GetSummaryLambdaFunctionQualifiedArn": {
           "Description": "Current Lambda function version",
           "Value": {
-            "Ref": "GetSummaryLambdaVersionzaKioDn5brWQOdb8KtQeCd78xblSMPjM3rKvsBy5AE"
+            "Ref": "GetSummaryLambdaVersionTuLlyLu6LPdc8Y6nLRzkRAkGNfhQX5BXQk5zNWKvcQ"
           },
           "Export": {
             "Name": "sls-platoro-api-dev-GetSummaryLambdaFunctionQualifiedArn"
@@ -5338,7 +5980,7 @@
         "CreateAccountLambdaFunctionQualifiedArn": {
           "Description": "Current Lambda function version",
           "Value": {
-            "Ref": "CreateAccountLambdaVersionkR5JFMXHinHAC8dpYguzXjVSYhy0IsXaHOE9uGq4CKs"
+            "Ref": "CreateAccountLambdaVersion5rD8CMsRQX9ocdYubwNy5PzjfVQWWKBsQkCcA0FZs"
           },
           "Export": {
             "Name": "sls-platoro-api-dev-CreateAccountLambdaFunctionQualifiedArn"
@@ -5347,7 +5989,7 @@
         "LoginAccountLambdaFunctionQualifiedArn": {
           "Description": "Current Lambda function version",
           "Value": {
-            "Ref": "LoginAccountLambdaVersionBOTRarnZ0XTeyYBRQYRVgGC1qcVNce0PEo0CeTwQ"
+            "Ref": "LoginAccountLambdaVersionkp4cOWCEFozPu14fJYIHWZkhl0Zax0ZRemnmpZ0v04"
           },
           "Export": {
             "Name": "sls-platoro-api-dev-LoginAccountLambdaFunctionQualifiedArn"
@@ -5355,6 +5997,15 @@
         },
         "RequestPasswordResetLambdaFunctionQualifiedArn": "<REDACTED>",
         "ConfirmPasswordResetLambdaFunctionQualifiedArn": "<REDACTED>",
+        "ConfirmSignupLambdaFunctionQualifiedArn": {
+          "Description": "Current Lambda function version",
+          "Value": {
+            "Ref": "ConfirmSignupLambdaVersionhhVI6QLZf88ECFlKpV1McG1O4K97OeMbWlvrjeslsQ"
+          },
+          "Export": {
+            "Name": "sls-platoro-api-dev-ConfirmSignupLambdaFunctionQualifiedArn"
+          }
+        },
         "ServiceEndpoint": {
           "Description": "URL of the service endpoint",
           "Value": {

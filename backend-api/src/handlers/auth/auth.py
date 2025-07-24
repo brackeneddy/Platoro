@@ -14,7 +14,7 @@ oauth.register(
     name='cognito',
     client_id=os.environ["COGNITO_APP_CLIENT_ID"],
     client_secret=os.environ["COGNITO_APP_CLIENT_SECRET"],
-    api_base_url=f"https://{os.environ['COGNITO_DOMAIN']}",  # e.g. something.auth.us-east-1.amazoncognito.com
+    api_base_url=f"https://{os.environ['COGNITO_DOMAIN']}",
     authorize_url=f"https://{os.environ['COGNITO_DOMAIN']}/oauth2/authorize",
     access_token_url=f"https://{os.environ['COGNITO_DOMAIN']}/oauth2/token",
     client_kwargs={

@@ -10,6 +10,7 @@ provider:
     GOALS_TABLE: goals
     COGNITO_USER_POOL_ID: us-east-1_rg2KJCwn3
     COGNITO_APP_CLIENT_ID: 1ld5rfsnbldiccjtpk6gmvtv9d
+    COGNITO_APP_CLIENT_SECRET: 16idfdj1gq3mfl8accoqrhr3hvoita41buhrll0inn0bf52tv6qf
   iam:
     role:
       statements:
@@ -84,6 +85,13 @@ functions:
     events:
       - http:
           path: account/confirm-reset
+          method: post
+          cors: true
+  confirmSignup:
+    handler: src/handlers/accounts/confirm_signup.handler
+    events:
+      - http:
+          path: account/confirm
           method: post
           cors: true
 
